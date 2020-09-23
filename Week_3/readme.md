@@ -1,2 +1,2 @@
-Week 3 exercises and test files
-Approbed with 90%
+- Week 3
+- HomeWork (90%)
