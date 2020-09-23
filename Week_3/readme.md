@@ -1,2 +1,3 @@
-- Week 3
-- HomeWork (90%)
+- Week 3 - Arrays
+- Assigments ([link](https://coursera.cs.princeton.edu/introcs/assignments/arrays/specification.php)):
+	 (90%)
