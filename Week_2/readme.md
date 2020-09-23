@@ -1,2 +1,3 @@
-- Week 2
-- HomeWork (80%)
+- Week 2 - Loops & conditionals
+- Assigment ([Link](https://coursera.cs.princeton.edu/introcs/assignments/loops/specification.php))
+	- Score: 80%

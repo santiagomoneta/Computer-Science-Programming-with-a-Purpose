@@ -1,0 +1,654 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red98\green98\blue98;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c45882\c45882\c45882;\cssrgb\c100000\c100000\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 See the Assessment Guide for information on how to interpret this report.\
+\
+ASSESSMENT SUMMARY\
+\
+Compilation:  PASSED\
+API:          PASSED\
+\
+Spotbugs:     PASSED\
+PMD:          PASSED\
+Checkstyle:   FAILED (0 errors, 12 warnings)\
+\
+Correctness:  25/28 tests passed\
+Memory:       No tests available for autograding.\
+Timing:       No tests available for autograding.\
+\
+Aggregate score: 90.36%\
+[ Compilation: 5%, API: 5%, Style: 0%, Correctness: 90% ]\
+\
+ASSESSMENT DETAILS\
+\
+The following files were submitted:\
+----------------------------------\
+1.5K Sep 23 03:31 Birthday.java\
+1016 Sep 23 03:31 DiscreteDistribution.java\
+3.7K Sep 23 03:31 Minesweeper.java\
+ 641 Sep 23 03:31 ThueMorse.java\
+\
+\
+********************************************************************************\
+*  COMPILING                                                                    \
+********************************************************************************\
+\
+\
+% javac DiscreteDistribution.java\
+*-----------------------------------------------------------\
+\
+% javac ThueMorse.java\
+*-----------------------------------------------------------\
+\
+% javac Birthday.java\
+*-----------------------------------------------------------\
+\
+% javac Minesweeper.java\
+*-----------------------------------------------------------\
+\
+\
+================================================================\
+\
+\
+Checking the APIs of your programs.\
+*-----------------------------------------------------------\
+DiscreteDistribution:\
+\
+ThueMorse:\
+\
+Birthday:\
+\
+Minesweeper:\
+\
+================================================================\
+\
+\
+********************************************************************************\
+*  CHECKING STYLE AND COMMON BUG PATTERNS                                       \
+********************************************************************************\
+\
+\
+% spotbugs *.class\
+*-----------------------------------------------------------\
+\
+\
+================================================================\
+\
+\
+% pmd .\
+*-----------------------------------------------------------\
+\
+\
+================================================================\
+\
+\
+% checkstyle *.java\
+*-----------------------------------------------------------\
+[WARN] DiscreteDistribution.java:4:11: '//' or '/*' is not followed by whitespace. [WhitespaceAfter]\
+[WARN] DiscreteDistribution.java:5:11: '//' or '/*' is not followed by whitespace. [WhitespaceAfter]\
+[WARN] DiscreteDistribution.java:10:11: '//' or '/*' is not followed by whitespace. [WhitespaceAfter]\
+[WARN] DiscreteDistribution.java:15:15: '//' or '/*' is not followed by whitespace. [WhitespaceAfter]\
+[WARN] DiscreteDistribution.java:17:15: '//' or '/*' is not followed by whitespace. [WhitespaceAfter]\
+[WARN] DiscreteDistribution.java:20:11: '//' or '/*' is not followed by whitespace. [WhitespaceAfter]\
+[WARN] DiscreteDistribution.java:24:15: '//' or '/*' is not followed by whitespace. [WhitespaceAfter]\
+[WARN] Minesweeper.java:10:11: '//' or '/*' is not followed by whitespace. [WhitespaceAfter]\
+[WARN] Minesweeper.java:12:11: '//' or '/*' is not followed by whitespace. [WhitespaceAfter]\
+[WARN] Minesweeper.java:80:15: '//' or '/*' is not followed by whitespace. [WhitespaceAfter]\
+[WARN] Minesweeper.java:83:19: '//' or '/*' is not followed by whitespace. [WhitespaceAfter]\
+Checkstyle ends with 0 errors and 11 warning.\
+\
+% custom checkstyle checks for DiscreteDistribution.java\
+*-----------------------------------------------------------\
+\
+% custom checkstyle checks for ThueMorse.java\
+*-----------------------------------------------------------\
+\
+% custom checkstyle checks for Birthday.java\
+*-----------------------------------------------------------\
+\
+% custom checkstyle checks for Minesweeper.java\
+*-----------------------------------------------------------\
+[WARN] Minesweeper.java:39: Calling 'Math.random()' in more than one place suggests poor design in this program. [Design]\
+Checkstyle ends with 0 errors and 1 warning.\
+\
+\
+================================================================\
+\
+\
+********************************************************************************\
+*  TESTING CORRECTNESS\
+********************************************************************************\
+\
+Testing correctness of DiscreteDistribution\
+*-----------------------------------------------------------\
+Running 6 total tests.\
+\
+Test 1: check output format\
+  % java DiscreteDistribution 9 1 1 1 1 1 1\
+  6 3 4 1 1 1 3 3 2 \
+\
+  % java DiscreteDistribution 8 10 20 30 40 50 60 50 40 30 20 10\
+  7 2 8 1 5 8 9 7 \
+\
+  % java DiscreteDistribution 7 10 10 10 10 10 50\
+  1 6 2 4 3 3 5 \
+\
+  % java DiscreteDistribution 6 50 50\
+  1 1 2 1 2 1 \
+\
+  % java DiscreteDistribution 5 80 20\
+  1 1 2 1 1 \
+\
+  % java DiscreteDistribution 4 301 176 125 97 79 67 58 51 46\
+  2 3 1 4 \
+\
+  % java DiscreteDistribution 3 19 49 60 47 32 18 3 3 1\
+  6 6 2 \
+\
+  % java DiscreteDistribution 2 9316001 10274874 10109130 10045436 9850199 6704495 5886889\
+  3 2 \
+\
+  % java DiscreteDistribution 1 8167 1492 2782 4253 12702 2228 2015 6094 6966 153 772     ...\
+  4 \
+\
+==> passed\
+\
+Test 2: check that output contains correct number of integers\
+  * fair die                           [ repeated 1000 times ]\
+  * sum of two dice                    [ repeated 1000 times ]\
+  * loaded die                         [ repeated 1000 times ]\
+  * fair coin                          [ repeated 1000 times ]\
+  * 80/20 biased coin                  [ repeated 1000 times ]\
+  * 9 digits in Benford's law          [ repeated 1000 times ]\
+  * goals in FIFA World Cup 1990-2002  [ repeated 1000 times ]\
+  * U.S. birthdays by day of week      [ repeated 1000 times ]\
+  * 26 letters in English language     [ repeated 1000 times ]\
+==> passed\
+\
+Test 3: check that output is a sequence of integers between 1 and n\
+  * fair die                           [ repeated 1000 times ]\
+  * sum of two dice                    [ repeated 1000 times ]\
+  * loaded die                         [ repeated 1000 times ]\
+  * fair coin                          [ repeated 1000 times ]\
+  * 80/20 biased coin                  [ repeated 1000 times ]\
+  * 9 digits in Benford's law          [ repeated 1000 times ]\
+  * goals in FIFA World Cup 1990-2002  [ repeated 1000 times ]\
+  * U.S. birthdays by day of week      [ repeated 1000 times ]\
+  * 26 letters in English language     [ repeated 1000 times ]\
+==> passed\
+\
+Test 4: check that program produces different results when run twice\
+  * fair die                           [ repeated 10 times ]\
+  * sum of two dice                    [ repeated 12 times ]\
+  * loaded die                         [ repeated 10 times ]\
+  * fair coin                          [ repeated 20 times ]\
+  * 80/20 biased coin                  [ repeated 30 times ]\
+  * 9 digits in Benford's law          [ repeated 10 times ]\
+  * goals in FIFA World Cup 1990-2002  [ repeated 10 times ]\
+  * U.S. birthdays by day of week      [ repeated 14 times ]\
+  * 26 letters in English language     [ repeated 10 times ]\
+==> passed\
+\
+Test 5: check randomness\
+  * fair die                           [ repeated 100000 times ]\
+  * sum of two dice                    [ repeated 100000 times ]\
+  * loaded die                         [ repeated 100000 times ]\
+  * fair coin                          [ repeated 100000 times ]\
+  * 80/20 biased coin                  [ repeated 100000 times ]\
+  * 9 digits in Benford's law          [ repeated 100000 times ]\
+  * 26 letters in English language     [ repeated 100000 times ]\
+  * goals in FIFA World Cup 1990-2002  [ repeated 100000 times ]\
+  * U.S. birthdays by day of week      [ repeated 100000 times ]\
+==> passed\
+\
+Test 6: check randomness when n = 1\
+  * a_1 = 1                            [ repeated 100000 times ]\
+  * a_1 = 100                          [ repeated 100000 times ]\
+==> passed\
+\
+\
+DiscreteDistribution Total: 6/6 tests passed!\
+\
+\
+================================================================\
+Testing correctness of ThueMorse\
+*-----------------------------------------------------------\
+Running 5 total tests.\
+\
+Test 1: check output format\
+  % java ThueMorse 2\
+  +  -  \
+  -  +  \
+\
+  % java ThueMorse 4\
+  +  -  -  +  \
+  -  +  +  -  \
+  -  +  +  -  \
+  +  -  -  +  \
+\
+  % java ThueMorse 8\
+  +  -  -  +  -  +  +  -  \
+  -  +  +  -  +  -  -  +  \
+  -  +  +  -  +  -  -  +  \
+  +  -  -  +  -  +  +  -  \
+  -  +  +  -  +  -  -  +  \
+  +  -  -  +  -  +  +  -  \
+  +  -  -  +  -  +  +  -  \
+  -  +  +  -  +  -  -  +  \
+\
+  % java ThueMorse 16\
+  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  +  \
+  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  -  \
+  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  -  \
+  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  +  \
+  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  -  \
+  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  +  \
+  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  +  \
+  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  -  \
+  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  -  \
+  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  +  \
+  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  +  \
+  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  -  \
+  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  +  \
+  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  -  \
+  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  -  \
+  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  +  \
+\
+==> passed\
+\
+Test 2: check correctness when n is a power of 2\
+  * java ThueMorse 2\
+  * java ThueMorse 4\
+  * java ThueMorse 8\
+  * java ThueMorse 16\
+  * java ThueMorse 32\
+  * java ThueMorse 64\
+==> passed\
+\
+Test 3: check correctness when n is not a power of 2\
+  * java ThueMorse 3\
+  * java ThueMorse 5\
+  * java ThueMorse 6\
+  * java ThueMorse 7\
+  * java ThueMorse 9\
+  * java ThueMorse 10\
+  * java ThueMorse 11\
+  * java ThueMorse 12\
+  * java ThueMorse 13\
+  * java ThueMorse 14\
+  * java ThueMorse 15\
+==> passed\
+\
+Test 4: check corner case\
+  * java ThueMorse 1\
+==> passed\
+\
+Test 5: check random values of n\
+  * 100 random values of n in [16, 32)\
+  * 100 random values of n in [32, 64)\
+  * 50 random values of n in [64, 128)\
+  * 25 random values of n in [128, 256)\
+==> passed\
+\
+\
+ThueMorse Total: 5/5 tests passed!\
+\
+\
+================================================================\
+Testing correctness of Birthday\
+*-----------------------------------------------------------\
+Running 6 total tests.\
+\
+Test 1: check output format\
+  % java Birthday 365 100000\
+  1 0 0.0\
+  2	301	0.00301\
+  3	519	0.0082\
+  4	862	0.01682\
+  5	1129	0.028110000000000003\
+  6	1344	0.041550000000000004\
+  7	1536	0.05691\
+  8	1781	0.07472000000000001\
+  9	2028	0.095\
+  10	2195	0.11695\
+  11	2426	0.14121\
+  12	2609	0.1673\
+  13	2804	0.19534\
+  14	2787	0.22321000000000002\
+  15	2925	0.25246\
+  16	2980	0.28226\
+  17	3190	0.31416\
+  18	3158	0.34574\
+  19	3261	0.37834999999999996\
+  20	3214	0.41048999999999997\
+  21	3277	0.44326\
+  22	3252	0.47578\
+  23	3266	0.50844\
+\
+  % java Birthday 31 100000\
+  1 0 0.0\
+  2	3243	0.03243\
+  3	6291	0.09534\
+  4	8747	0.18281\
+  5	10452	0.28733\
+  6	11456	0.40188999999999997\
+  7	11408	0.5159699999999999\
+\
+==> passed\
+\
+Test 2: check values in first column\
+  * java Birthday 365 10000\
+  * java Birthday 31 10000\
+  * java Birthday 1 1000\
+  * java Birthday 2 1000\
+==> passed\
+\
+Test 3: check that cumulative percentages are monotone nondecreasing\
+        and table stops when percentage reaches (or exceeds) 50%\
+  * java Birthday 365 10000 [ repeated 10 times ]\
+  * java Birthday 31 10000 [ repeated 10 times ]\
+  * java Birthday 10 5 [ repeated 1000 times ]\
+\
+    java.lang.ArrayIndexOutOfBoundsException: Index 12 out of bounds for length 12\
+\
+    Birthday.main(Birthday.java:20)\
+    UtilCOS.execute(UtilCOS.java:93)\
+    UtilCOS.execute(UtilCOS.java:76)\
+    TestBirthday.getStudentOutput(TestBirthday.java:52)\
+    TestBirthday.isCorrectCumulativePercentages(TestBirthday.java:178)\
+    TestBirthday.checkCumulativePercentages(TestBirthday.java:167)\
+    TestBirthday.test3(TestBirthday.java:420)\
+    TestBirthday.main(TestBirthday.java:460)\
+\
+    - failed on trial 18 of 1000\
+\
+  * java Birthday 4 4 [ repeated 1000 times ]\
+\
+    java.lang.ArrayIndexOutOfBoundsException: Index 6 out of bounds for length 6\
+\
+    Birthday.main(Birthday.java:20)\
+    UtilCOS.execute(UtilCOS.java:93)\
+    UtilCOS.execute(UtilCOS.java:76)\
+    TestBirthday.getStudentOutput(TestBirthday.java:52)\
+    TestBirthday.isCorrectCumulativePercentages(TestBirthday.java:178)\
+    TestBirthday.checkCumulativePercentages(TestBirthday.java:167)\
+    TestBirthday.test3(TestBirthday.java:421)\
+    TestBirthday.main(TestBirthday.java:460)\
+\
+    - failed on trial 6 of 1000\
+\
+  * java Birthday 2 2 [ repeated 1000 times ]\
+\
+    java.lang.ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 4\
+\
+    Birthday.main(Birthday.java:20)\
+    UtilCOS.execute(UtilCOS.java:93)\
+    UtilCOS.execute(UtilCOS.java:76)\
+    TestBirthday.getStudentOutput(TestBirthday.java:52)\
+    TestBirthday.isCorrectCumulativePercentages(TestBirthday.java:178)\
+    TestBirthday.checkCumulativePercentages(TestBirthday.java:167)\
+    TestBirthday.test3(TestBirthday.java:422)\
+    TestBirthday.main(TestBirthday.java:460)\
+\
+    - failed on trial 2 of 1000\
+\
+==> FAILED\
+\
+Test 4: check that cumulative percentages are consistent with frequencies\
+  * java Birthday 365 10000\
+  * java Birthday 31 10000\
+==> passed\
+\
+Test 5: check that each execution of program outputs a different table\
+  * java Birthday 365 10000 [ repeated twice ]\
+  * java Birthday 31 10000 [ repeated twice ]\
+==> passed\
+\
+Test 6: check randomness of birthdays\
+  * java Birthday 365 1000000\
+  * java Birthday 31 1000000\
+  * java Birthday 7 1000000\
+  * java Birthday 5 1000000\
+==> passed\
+\
+\
+Birthday Total: 5/6 tests passed!\
+\
+\
+================================================================\
+Testing correctness of Minesweeper\
+*-----------------------------------------------------------\
+Running 11 total tests.\
+\
+Test 1: check output format\
+  % java Minesweeper 9 9 10\
+  1 1 0 0 0 0 0 1 1 \
+  * 1 0 0 0 0 1 2 * \
+  1 2 1 1 0 0 1 * 2 \
+  0 1 * 1 0 0 1 1 1 \
+  1 2 3 2 2 2 2 1 0 \
+  1 * 3 * 2 * * 2 1 \
+  1 2 * 2 2 2 3 * 1 \
+  0 1 1 1 0 0 1 1 1 \
+  0 0 0 0 0 0 0 0 0 \
+\
+  - line 0 of output in student solution: \
+    "1 1 0 0 0 0 0 1 1 "\
+  - the format of line 0 should be:\
+    a sequence of integers or asterisks, with two spaces between each element\
+\
+  % java Minesweeper 16 16 40\
+  1 1 1 1 2 * 1 0 0 0 0 1 * 1 0 0 \
+  1 * 2 2 * 2 1 0 1 1 1 2 2 3 1 1 \
+  1 1 2 * 2 1 0 0 1 * 1 1 * 3 * 2 \
+  0 0 1 1 1 0 0 0 1 1 1 1 2 * 3 * \
+  0 0 0 0 0 0 0 0 0 0 0 0 1 1 2 1 \
+  1 1 0 0 1 2 3 2 1 0 0 1 1 1 0 0 \
+  * 1 0 0 1 * * * 1 1 1 2 * 2 1 0 \
+  1 1 0 0 1 2 3 2 1 1 * 2 2 * 2 1 \
+  0 0 0 1 1 1 0 1 1 2 1 1 1 2 * 1 \
+  0 1 1 2 * 2 1 1 * 1 0 0 1 2 2 1 \
+  0 1 * 2 2 * 2 3 3 3 1 0 1 * 1 0 \
+  0 1 1 1 1 3 * 4 * * 2 0 1 1 1 0 \
+  0 0 0 0 0 3 * * 5 * 3 1 1 0 0 0 \
+  0 0 1 1 1 2 * * 3 1 2 * 1 1 2 2 \
+  1 1 3 * 4 3 3 2 1 1 2 2 1 1 * * \
+  1 * 3 * * * 1 0 0 1 * 1 0 1 2 2 \
+\
+  - line 0 of output in student solution: \
+    "1 1 1 1 2 * 1 0 0 0 0 1 * 1 0 0 "\
+  - the format of line 0 should be:\
+    a sequence of integers or asterisks, with two spaces between each element\
+\
+  % java Minesweeper 16 30 82\
+  1 1 0 1 2 3 2 2 * 1 1 * 1 0 0 0 0 0 2 * * 2 1 1 1 1 1 0 0 0 \
+  * 1 0 1 * * * 2 1 1 1 1 2 1 1 1 1 1 3 * 4 2 * 1 1 * 1 0 0 0 \
+  1 1 0 1 2 3 3 2 1 1 1 1 1 * 1 1 * 1 2 * 2 1 1 1 2 2 2 0 0 0 \
+  0 0 0 0 0 1 3 * 2 1 * 1 1 1 1 1 2 2 2 1 1 1 1 1 1 * 2 1 1 0 \
+  0 0 1 1 1 1 * * 2 2 2 2 1 1 2 2 3 * 1 0 0 1 * 2 2 1 2 * 2 1 \
+  0 0 2 * 2 1 2 2 1 1 * 1 2 * 3 * * 2 1 1 1 2 2 * 2 1 1 1 2 * \
+  0 0 3 * 4 1 1 0 0 1 1 1 2 * 3 2 2 1 0 1 * 2 2 2 * 1 0 1 3 3 \
+  0 0 2 * 4 * 1 0 0 0 0 0 1 1 1 0 1 1 2 3 4 * 1 1 1 1 0 1 * * \
+  0 0 2 3 * 2 1 1 1 1 0 1 1 2 2 3 3 * 4 * * 2 1 0 0 0 1 2 3 2 \
+  1 1 1 * 2 2 1 3 * 2 0 1 * 3 * * * 4 * * 3 2 1 1 0 0 1 * 2 1 \
+  * 2 2 2 2 2 * 3 * 3 1 1 2 * 4 5 * 3 2 2 1 2 * 2 0 0 2 2 3 * \
+  2 * 1 1 * 2 1 3 3 * 1 0 1 1 2 * 2 1 0 0 0 2 * 2 0 0 1 * 3 2 \
+  1 1 1 2 3 3 1 1 * 2 1 0 0 0 1 2 2 1 0 0 1 2 2 1 0 0 1 2 * 2 \
+  0 0 0 1 * * 2 3 2 2 0 0 0 0 1 2 * 1 1 1 2 * 1 0 1 1 1 1 2 * \
+  0 0 0 1 3 4 * 2 * 1 0 0 1 1 2 * 2 2 3 * 3 1 2 1 2 * 2 1 2 1 \
+  0 0 0 0 1 * 2 2 1 1 0 0 1 * 2 1 1 1 * * 2 0 1 * 2 1 2 * 1 0 \
+\
+  - line 0 of output in student solution: \
+    "1 1 0 1 2 3 2 2 * 1 1 * 1 0 0 0 0 0 2 * * 2 1 1 1 1 1 0 0 0 "\
+  - the format of line 0 should be:\
+    a sequence of integers or asterisks, with two spaces between each element\
+\
+  % java Minesweeper 4 8 0\
+  0 0 0 0 0 0 0 0 \
+  0 0 0 0 0 0 0 0 \
+  0 0 0 0 0 0 0 0 \
+  0 0 0 0 0 0 0 0 \
+\
+  - line 0 of output in student solution: \
+    "0 0 0 0 0 0 0 0 "\
+  - the format of line 0 should be:\
+    a sequence of integers or asterisks, with two spaces between each element\
+\
+  % java Minesweeper 8 4 32\
+  * * * * \
+  * * * * \
+  * * * * \
+  * * * * \
+  * * * * \
+  * * * * \
+  * * * * \
+  * * * * \
+\
+  - line 0 of output in student solution: \
+    "* * * * "\
+  - the format of line 0 should be:\
+    a sequence of integers or asterisks, with two spaces between each element\
+\
+  % java Minesweeper 1 20 10\
+  0 1 * 2 * * 2 * 1 1 * * 1 1 * * 1 1 * * \
+\
+==> FAILED\
+\
+Test 2: check that counts are consistent with mines (varying k)\
+  * m =  4, n =  8, k random [1000 trials]\
+  * m =  8, n =  4, k random [1000 trials]\
+  * m =  5, n = 40, k random [1000 trials]\
+  * m =  7, n = 30, k random [1000 trials]\
+  * m = 10, n = 10, k random [1000 trials]\
+==> passed\
+\
+Test 3: check that counts are consistent with mines (fixed k)\
+  * k =  1, m and n random   [1000 trials]\
+  * k = 10, m and n random   [1000 trials]\
+  * k = 20, m and n random   [1000 trials]\
+  * k = 50, m and n random   [1000 trials]\
+  * k = 80, m and n random   [1000 trials]\
+  * k = 90, m and n random   [1000 trials]\
+  * k = 99, m and n random   [1000 trials]\
+==> passed\
+\
+Test 4: check that counts are consistent with mines (corner cases)\
+  * m =  5, n = 10, k =  0\
+  * m = 10, n =  5, k =  0\
+  * m =  5, n = 10, k = 50\
+  * m = 10, n =  5, k = 50\
+  * k =  0, m and n random   [1000 trials]\
+  * k =  1, m and n random   [1000 trials]\
+==> passed\
+\
+Test 5: check that program produces different results each time\
+  * m =  4, n =  8, k = 16 [2 trials]\
+  * m =  8, n =  4, k = 26 [2 trials]\
+  * m =  1, n = 20, k = 16 [2 trials]\
+  * m = 20, n =  1, k = 10 [2 trials]\
+==> passed\
+\
+Test 6: check number of mines, with k varying\
+  * m =  4, n =  8, k random [1000 trials]\
+  * m =  8, n =  4, k random [1000 trials]\
+  * m =  5, n = 40, k random [1000 trials]\
+  * m =  7, n = 30, k random [1000 trials]\
+  * m = 10, n = 10, k random [1000 trials]\
+==> passed\
+\
+Test 7: check number of mines, with k fixed\
+  * k =  5, m and n random   [1000 trials]\
+  * k = 10, m and n random   [1000 trials]\
+  * k = 50, m and n random   [1000 trials]\
+  * k = 99, m and n random   [1000 trials]\
+==> passed\
+\
+Test 8: check number of mines for corner cases\
+  * m =  5, n = 20, k =  0\
+  * m = 20, n =  5, k =  0\
+  * m =  5, n = 10, k = 50\
+  * m = 10, n =  5, k = 50\
+  * k =  0, m and n random   [1000 trials]\
+  * k =  1, m and n random   [1000 trials]\
+==> passed\
+\
+Test 9: check that mines are uniformly random\
+  * m = 1, n = 2, k = 1 [repeated 15000 times]\
+  * m = 1, n = 3, k = 1 [repeated 15000 times]\
+  * m = 2, n = 2, k = 2 [repeated 15000 times]\
+            value  observed  expected   2*O*ln(O/E)\
+        -------------------------------------------\
+              1-1      8133    7500.0       1317.98\
+              1-2      7104    7500.0       -770.71\
+              2-1      7260    7500.0       -472.24\
+              2-2      7503    7500.0          6.00\
+        -------------------------------------------\
+                      30000   30000.0         81.03\
+    \
+    G-statistic = 81.03 (p-value = 0.000000, reject if p-value <= 0.0001)\
+    Note: a correct solution will fail this test by bad luck 1 time in 10,000.\
+\
+  * m = 2, n = 4, k = 3 [repeated 15000 times]\
+            value  observed  expected   2*O*ln(O/E)\
+        -------------------------------------------\
+              1-1      6498    5625.0       1874.98\
+              1-2      5863    5625.0        485.93\
+              1-3      5240    5625.0       -743.03\
+              1-4      5380    5625.0       -479.17\
+              2-1      5393    5625.0       -454.30\
+              2-2      5464    5625.0       -317.35\
+              2-3      5530    5625.0       -188.39\
+              2-4      5632    5625.0         14.01\
+        -------------------------------------------\
+                      45000   45000.0        192.69\
+    \
+    G-statistic = 192.69 (p-value = 0.000000, reject if p-value <= 0.0001)\
+    Note: a correct solution will fail this test by bad luck 1 time in 10,000.\
+\
+  * m = 3, n = 3, k = 6 [repeated 15000 times]\
+            value  observed  expected   2*O*ln(O/E)\
+        -------------------------------------------\
+              1-1     10817   10000.0       1699.00\
+              1-2     10667   10000.0       1377.53\
+              1-3     10348   10000.0        707.97\
+              2-1      9949   10000.0       -101.74\
+              2-2      9790   10000.0       -415.56\
+              2-3      9287   10000.0      -1373.91\
+              3-1      9559   10000.0       -862.26\
+              3-2      9650   10000.0       -687.60\
+              3-3      9933   10000.0       -133.55\
+        -------------------------------------------\
+                      90000   90000.0        209.88\
+    \
+    G-statistic = 209.88 (p-value = 0.000000, reject if p-value <= 0.0001)\
+    Note: a correct solution will fail this test by bad luck 1 time in 10,000.\
+\
+==> FAILED\
+\
+Test 10: check statistical independence of mines within an m-by-n grid\
+  * m = 500, n = 500, k = 125000\
+  * m = 500, n = 500, k = 25000\
+  * m = 500, n = 500, k = 225000\
+  * m = 100, n = 900, k = 27000\
+  * m = 900, n = 100, k = 63000\
+==> passed\
+\
+Test 11: check statistical independence of mines between m-by-n grids\
+  * m = 1, n = 2, k = 1 [repeated 50000 times]\
+  * m = 1, n = 3, k = 1 [repeated 50000 times]\
+  * m = 2, n = 2, k = 2 [repeated 50000 times]\
+  * m = 2, n = 4, k = 3 [repeated 50000 times]\
+  * m = 3, n = 3, k = 8 [repeated 50000 times]\
+==> passed\
+\
+\
+Minesweeper Total: 9/11 tests passed!\
+\
+\
+================================================================}

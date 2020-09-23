@@ -1,0 +1,1109 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red98\green98\blue98;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c45882\c45882\c45882;\cssrgb\c100000\c100000\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 See the Assessment Guide for information on how to interpret this report.\
+\
+ASSESSMENT SUMMARY\
+\
+Compilation:  PASSED\
+API:          PASSED\
+\
+Spotbugs:     PASSED\
+PMD:          PASSED\
+Checkstyle:   FAILED (0 errors, 79 warnings)\
+\
+Correctness:  25/32 tests passed\
+Memory:       No tests available for autograding.\
+Timing:       No tests available for autograding.\
+\
+Aggregate score: 80.31%\
+[ Compilation: 5%, API: 5%, Style: 0%, Correctness: 90% ]\
+\
+ASSESSMENT DETAILS\
+\
+The following files were submitted:\
+----------------------------------\
+ 499 Sep 21 19:20 BandMatrix.java\
+ 358 Sep 21 19:20 GeneralizedHarmonic.java\
+ 772 Sep 21 19:20 RandomWalker.java\
+ 888 Sep 21 19:20 RandomWalkers.java\
+\
+\
+********************************************************************************\
+*  COMPILING                                                                    \
+********************************************************************************\
+\
+\
+% javac GeneralizedHarmonic.java\
+*-----------------------------------------------------------\
+\
+% javac BandMatrix.java\
+*-----------------------------------------------------------\
+\
+% javac RandomWalker.java\
+*-----------------------------------------------------------\
+\
+% javac RandomWalkers.java\
+*-----------------------------------------------------------\
+\
+\
+================================================================\
+\
+\
+Checking the APIs of your programs.\
+*-----------------------------------------------------------\
+GeneralizedHarmonic:\
+\
+BandMatrix:\
+\
+RandomWalker:\
+\
+RandomWalkers:\
+\
+================================================================\
+\
+\
+********************************************************************************\
+*  CHECKING STYLE AND COMMON BUG PATTERNS                                       \
+********************************************************************************\
+\
+\
+% spotbugs *.class\
+*-----------------------------------------------------------\
+\
+\
+================================================================\
+\
+\
+% pmd .\
+*-----------------------------------------------------------\
+\
+\
+================================================================\
+\
+\
+% checkstyle *.java\
+*-----------------------------------------------------------\
+[WARN] BandMatrix.java:3:43: '\{' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] BandMatrix.java:7:9: 'for' is not followed by whitespace. [WhitespaceAfter]\
+[WARN] BandMatrix.java:7:18: '=' is not followed by whitespace. [WhitespaceAround]\
+[WARN] BandMatrix.java:7:18: '=' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] BandMatrix.java:7:23: '<' is not followed by whitespace. [WhitespaceAround]\
+[WARN] BandMatrix.java:7:23: '<' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] BandMatrix.java:7:31: '\{' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] BandMatrix.java:8:13: 'for' is not followed by whitespace. [WhitespaceAfter]\
+[WARN] BandMatrix.java:8:22: '=' is not followed by whitespace. [WhitespaceAround]\
+[WARN] BandMatrix.java:8:22: '=' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] BandMatrix.java:8:27: '<' is not followed by whitespace. [WhitespaceAround]\
+[WARN] BandMatrix.java:8:27: '<' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] BandMatrix.java:8:35: '\{' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] BandMatrix.java:9:17: 'if' is not followed by whitespace. [WhitespaceAfter]\
+[WARN] BandMatrix.java:9:49: '==' is not followed by whitespace. [WhitespaceAround]\
+[WARN] BandMatrix.java:9:49: '==' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] BandMatrix.java:10:17: 'else' is not followed by whitespace. [WhitespaceAfter]\
+[WARN] BandMatrix.java:10:21: '\{' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] GeneralizedHarmonic.java:1: Java automatically imports all classes and interfaces in the package 'java.lang'. So, there is no need to import such classes or interfaces; you can refer directly to them without the 'java.lang' prefix. [UnnecessaryJavaLang]\
+[WARN] GeneralizedHarmonic.java:1:1: Unnecessary import statement for 'java.lang.Math' because it is from the package 'java.lang'. [RedundantImport]\
+[WARN] GeneralizedHarmonic.java:1:8: Unused import statement for 'java.lang.Math'. [UnusedImports]\
+[WARN] GeneralizedHarmonic.java:4:43: '\{' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] GeneralizedHarmonic.java:9:9: 'for' is not followed by whitespace. [WhitespaceAfter]\
+[WARN] GeneralizedHarmonic.java:9:18: '=' is not followed by whitespace. [WhitespaceAround]\
+[WARN] GeneralizedHarmonic.java:9:18: '=' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] GeneralizedHarmonic.java:9:23: '<=' is not followed by whitespace. [WhitespaceAround]\
+[WARN] GeneralizedHarmonic.java:9:23: '<=' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] GeneralizedHarmonic.java:9:32: '\{' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] RandomWalker.java:1: Java automatically imports all classes and interfaces in the package 'java.lang'. So, there is no need to import such classes or interfaces; you can refer directly to them without the 'java.lang' prefix. [UnnecessaryJavaLang]\
+[WARN] RandomWalker.java:1:1: Unnecessary import statement for 'java.lang.Math' because it is from the package 'java.lang'. [RedundantImport]\
+[WARN] RandomWalker.java:1:8: Unused import statement for 'java.lang.Math'. [UnusedImports]\
+[WARN] RandomWalker.java:4:43: '\{' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] RandomWalker.java:7:14: '=' is not followed by whitespace. [WhitespaceAround]\
+[WARN] RandomWalker.java:7:14: '=' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] RandomWalker.java:8:14: '=' is not followed by whitespace. [WhitespaceAround]\
+[WARN] RandomWalker.java:8:14: '=' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] RandomWalker.java:10:19: '=' is not followed by whitespace. [WhitespaceAround]\
+[WARN] RandomWalker.java:12:9: 'while' is not followed by whitespace. [WhitespaceAfter]\
+[WARN] RandomWalker.java:12:48: '\{' is not preceded with whitespace. [WhitespaceAround]\
+...\
+Checkstyle ends with 0 errors and 79 warnings.\
+\
+% custom checkstyle checks for GeneralizedHarmonic.java\
+*-----------------------------------------------------------\
+\
+% custom checkstyle checks for BandMatrix.java\
+*-----------------------------------------------------------\
+\
+% custom checkstyle checks for RandomWalker.java\
+*-----------------------------------------------------------\
+\
+% custom checkstyle checks for RandomWalkers.java\
+*-----------------------------------------------------------\
+\
+\
+================================================================\
+\
+\
+********************************************************************************\
+*  TESTING CORRECTNESS\
+********************************************************************************\
+\
+Testing correctness of GeneralizedHarmonic\
+*-----------------------------------------------------------\
+Running 7 total tests.\
+\
+Test 1: check output format for inputs from assignment specification\
+  % java GeneralizedHarmonic 1 1\
+  1.0\
+\
+  % java GeneralizedHarmonic 2 1\
+  1.5\
+\
+  % java GeneralizedHarmonic 3 1\
+  1.8333333333333333\
+\
+  % java GeneralizedHarmonic 4 1\
+  2.083333333333333\
+\
+  % java GeneralizedHarmonic 1 2\
+  1.0\
+\
+  % java GeneralizedHarmonic 2 2\
+  1.25\
+\
+  % java GeneralizedHarmonic 3 2\
+  1.3611111111111112\
+\
+  % java GeneralizedHarmonic 4 2\
+  1.4236111111111112\
+\
+==> passed\
+\
+Test 2: check correctness for inputs from assignment specification\
+  * java GeneralizedHarmonic 1 1\
+  * java GeneralizedHarmonic 1 2\
+  * java GeneralizedHarmonic 1 3\
+  * java GeneralizedHarmonic 1 4\
+  * java GeneralizedHarmonic 2 1\
+  * java GeneralizedHarmonic 2 2\
+  * java GeneralizedHarmonic 2 3\
+  * java GeneralizedHarmonic 3 4\
+==> passed\
+\
+Test 3: check correctness when n = r\
+  * java GeneralizedHarmonic 1 1\
+  * java GeneralizedHarmonic 2 2\
+  * java GeneralizedHarmonic 3 3\
+  * java GeneralizedHarmonic 4 4\
+  * java GeneralizedHarmonic 5 5\
+  * java GeneralizedHarmonic 6 6\
+  * java GeneralizedHarmonic 7 7\
+  * java GeneralizedHarmonic 8 8\
+==> passed\
+\
+Test 4: check when r is fixed and n varies\
+  * r = 1\
+  * r = 2\
+  * r = 3\
+  * r = 4\
+  * r = 5\
+  * r = 6\
+  * r = 7\
+==> passed\
+\
+Test 5: check when n is fixed and r varies\
+  * n = 1\
+  * n = 2\
+  * n = 3\
+  * n = 4\
+  * n = 5\
+  * n = 6\
+  * n = 7\
+==> passed\
+\
+Test 6: check when r is 0\
+  * r = 0\
+==> passed\
+\
+Test 7: check when r is negative\
+  * r = -1\
+  * r = -2\
+  * r = -3\
+==> passed\
+\
+\
+GeneralizedHarmonic Total: 7/7 tests passed!\
+\
+\
+================================================================\
+Testing correctness of BandMatrix\
+*-----------------------------------------------------------\
+Running 7 total tests.\
+\
+Test 1: check output format\
+  % java BandMatrix 8 0\
+  *0000000\
+  0*000000\
+  00*00000\
+  000*0000\
+  0000*000\
+  00000*00\
+  000000*0\
+  0000000*\
+\
+  - line 0 of output in student solution:\
+    '*0000000'\
+  - student solution (ignoring trailing whitespace) has 8 characters\
+  - it should have exactly 22 characters\
+  - it should start with either a '*' or '0' character\
+  - it should alternate between two space characters and either a '*' or '0' character\
+\
+  % java BandMatrix 8 1\
+  **000000\
+  ***00000\
+  0***0000\
+  00***000\
+  000***00\
+  0000***0\
+  00000***\
+  000000**\
+\
+  - line 0 of output in student solution:\
+    '**000000'\
+  - student solution (ignoring trailing whitespace) has 8 characters\
+  - it should have exactly 22 characters\
+  - it should start with either a '*' or '0' character\
+  - it should alternate between two space characters and either a '*' or '0' character\
+\
+  % java BandMatrix 8 2\
+  *0*00000\
+  0*0*0000\
+  *0*0*000\
+  0*0*0*00\
+  00*0*0*0\
+  000*0*0*\
+  0000*0*0\
+  00000*0*\
+\
+  - line 0 of output in student solution:\
+    '*0*00000'\
+  - student solution (ignoring trailing whitespace) has 8 characters\
+  - it should have exactly 22 characters\
+  - it should start with either a '*' or '0' character\
+  - it should alternate between two space characters and either a '*' or '0' character\
+\
+  % java BandMatrix 8 3\
+  *00*0000\
+  0*00*000\
+  00*00*00\
+  *00*00*0\
+  0*00*00*\
+  00*00*00\
+  000*00*0\
+  0000*00*\
+\
+  - line 0 of output in student solution:\
+    '*00*0000'\
+  - student solution (ignoring trailing whitespace) has 8 characters\
+  - it should have exactly 22 characters\
+  - it should start with either a '*' or '0' character\
+  - it should alternate between two space characters and either a '*' or '0' character\
+\
+==> FAILED\
+\
+Test 2: check correctness for inputs from assignment specification\
+  * java BandMatrix 8 0\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  0  0  0  0  0  0  0  \
+      0  *  0  0  0  0  0  0  \
+      0  0  *  0  0  0  0  0  \
+      0  0  0  *  0  0  0  0  \
+      0  0  0  0  *  0  0  0  \
+      0  0  0  0  0  *  0  0  \
+      0  0  0  0  0  0  *  0  \
+      0  0  0  0  0  0  0  *  \
+\
+    - student output:\
+      *0000000\
+      0*000000\
+      00*00000\
+      000*0000\
+      0000*000\
+      00000*00\
+      000000*0\
+      0000000*\
+\
+\
+  * java BandMatrix 8 1\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  *  0  0  0  0  0  0  \
+      *  *  *  0  0  0  0  0  \
+      0  *  *  *  0  0  0  0  \
+      0  0  *  *  *  0  0  0  \
+      0  0  0  *  *  *  0  0  \
+      0  0  0  0  *  *  *  0  \
+      0  0  0  0  0  *  *  *  \
+      0  0  0  0  0  0  *  *  \
+\
+    - student output:\
+      **000000\
+      ***00000\
+      0***0000\
+      00***000\
+      000***00\
+      0000***0\
+      00000***\
+      000000**\
+\
+\
+  * java BandMatrix 8 2\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  *  *  0  0  0  0  0  \
+      *  *  *  *  0  0  0  0  \
+      *  *  *  *  *  0  0  0  \
+      0  *  *  *  *  *  0  0  \
+      0  0  *  *  *  *  *  0  \
+      0  0  0  *  *  *  *  *  \
+      0  0  0  0  *  *  *  *  \
+      0  0  0  0  0  *  *  *  \
+\
+    - student output:\
+      *0*00000\
+      0*0*0000\
+      *0*0*000\
+      0*0*0*00\
+      00*0*0*0\
+      000*0*0*\
+      0000*0*0\
+      00000*0*\
+\
+\
+  * java BandMatrix 8 3\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  *  *  *  0  0  0  0  \
+      *  *  *  *  *  0  0  0  \
+      *  *  *  *  *  *  0  0  \
+      *  *  *  *  *  *  *  0  \
+      0  *  *  *  *  *  *  *  \
+      0  0  *  *  *  *  *  *  \
+      0  0  0  *  *  *  *  *  \
+      0  0  0  0  *  *  *  *  \
+\
+    - student output:\
+      *00*0000\
+      0*00*000\
+      00*00*00\
+      *00*00*0\
+      0*00*00*\
+      00*00*00\
+      000*00*0\
+      0000*00*\
+\
+\
+==> FAILED\
+\
+Test 3: check correctness when width = 0\
+  * java BandMatrix 2 0\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  0  \
+      0  *  \
+\
+    - student output:\
+      *0\
+      0*\
+\
+\
+  * java BandMatrix 3 0\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  0  0  \
+      0  *  0  \
+      0  0  *  \
+\
+    - student output:\
+      *00\
+      0*0\
+      00*\
+\
+\
+  * java BandMatrix 4 0\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  0  0  0  \
+      0  *  0  0  \
+      0  0  *  0  \
+      0  0  0  *  \
+\
+    - student output:\
+      *000\
+      0*00\
+      00*0\
+      000*\
+\
+\
+  * java BandMatrix 5 0\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  0  0  0  0  \
+      0  *  0  0  0  \
+      0  0  *  0  0  \
+      0  0  0  *  0  \
+      0  0  0  0  *  \
+\
+    - student output:\
+      *0000\
+      0*000\
+      00*00\
+      000*0\
+      0000*\
+\
+\
+  * java BandMatrix 6 0\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  0  0  0  0  0  \
+      0  *  0  0  0  0  \
+      0  0  *  0  0  0  \
+      0  0  0  *  0  0  \
+      0  0  0  0  *  0  \
+      0  0  0  0  0  *  \
+\
+    - student output:\
+      *00000\
+      0*0000\
+      00*000\
+      000*00\
+      0000*0\
+      00000*\
+\
+\
+  * java BandMatrix 7 0\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  0  0  0  0  0  0  \
+      0  *  0  0  0  0  0  \
+      0  0  *  0  0  0  0  \
+      0  0  0  *  0  0  0  \
+      0  0  0  0  *  0  0  \
+      0  0  0  0  0  *  0  \
+      0  0  0  0  0  0  *  \
+\
+    - student output:\
+      *000000\
+      0*00000\
+      00*0000\
+      000*000\
+      0000*00\
+      00000*0\
+      000000*\
+\
+\
+==> FAILED\
+\
+Test 4: check correctness when n = width\
+  * java BandMatrix 2 2\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  *  \
+      *  *  \
+\
+    - student output:\
+      *0\
+      0*\
+\
+\
+  * java BandMatrix 3 3\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  *  *  \
+      *  *  *  \
+      *  *  *  \
+\
+    - student output:\
+      *00\
+      0*0\
+      00*\
+\
+\
+  * java BandMatrix 4 4\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  *  *  *  \
+      *  *  *  *  \
+      *  *  *  *  \
+      *  *  *  *  \
+\
+    - student output:\
+      *000\
+      0*00\
+      00*0\
+      000*\
+\
+\
+  * java BandMatrix 5 5\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  *  *  *  *  \
+      *  *  *  *  *  \
+      *  *  *  *  *  \
+      *  *  *  *  *  \
+      *  *  *  *  *  \
+\
+    - student output:\
+      *0000\
+      0*000\
+      00*00\
+      000*0\
+      0000*\
+\
+\
+  * java BandMatrix 6 6\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  *  *  *  *  *  \
+      *  *  *  *  *  *  \
+      *  *  *  *  *  *  \
+      *  *  *  *  *  *  \
+      *  *  *  *  *  *  \
+      *  *  *  *  *  *  \
+\
+    - student output:\
+      *00000\
+      0*0000\
+      00*000\
+      000*00\
+      0000*0\
+      00000*\
+\
+\
+  * java BandMatrix 7 7\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  \
+\
+    - student output:\
+      *000000\
+      0*00000\
+      00*0000\
+      000*000\
+      0000*00\
+      00000*0\
+      000000*\
+\
+\
+==> FAILED\
+\
+Test 5: check corner cases\
+  * java BandMatrix 0 0\
+  * java BandMatrix 1 0\
+  * java BandMatrix 2 0\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  0  \
+      0  *  \
+\
+    - student output:\
+      *0\
+      0*\
+\
+\
+  * java BandMatrix 8 9\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  *  \
+\
+    - student output:\
+      *0000000\
+      0*000000\
+      00*00000\
+      000*0000\
+      0000*000\
+      00000*00\
+      000000*0\
+      0000000*\
+\
+\
+  * java BandMatrix 8 20\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  *  \
+\
+    - student output:\
+      *0000000\
+      0*000000\
+      00*00000\
+      000*0000\
+      0000*000\
+      00000*00\
+      000000*0\
+      0000000*\
+\
+\
+==> FAILED\
+\
+Test 6: check correctness when n is fixed and width varies\
+  * n = 1\
+  * n = 2\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  0  \
+      0  *  \
+\
+    - student output:\
+      *0\
+      0*\
+\
+    - n = 2\
+    - width = 0\
+    - failed on trial 0 of 2\
+\
+  * n = 3\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  0  0  \
+      0  *  0  \
+      0  0  *  \
+\
+    - student output:\
+      *00\
+      0*0\
+      00*\
+\
+    - n = 3\
+    - width = 0\
+    - failed on trial 0 of 3\
+\
+  * n = 4\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  0  0  0  \
+      0  *  0  0  \
+      0  0  *  0  \
+      0  0  0  *  \
+\
+    - student output:\
+      *000\
+      0*00\
+      00*0\
+      000*\
+\
+    - n = 4\
+    - width = 0\
+    - failed on trial 0 of 4\
+\
+  * n = 5\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  0  0  0  0  \
+      0  *  0  0  0  \
+      0  0  *  0  0  \
+      0  0  0  *  0  \
+      0  0  0  0  *  \
+\
+    - student output:\
+      *0000\
+      0*000\
+      00*00\
+      000*0\
+      0000*\
+\
+    - n = 5\
+    - width = 0\
+    - failed on trial 0 of 5\
+\
+  * n = 6\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  0  0  0  0  0  \
+      0  *  0  0  0  0  \
+      0  0  *  0  0  0  \
+      0  0  0  *  0  0  \
+      0  0  0  0  *  0  \
+      0  0  0  0  0  *  \
+\
+    - student output:\
+      *00000\
+      0*0000\
+      00*000\
+      000*00\
+      0000*0\
+      00000*\
+\
+    - n = 6\
+    - width = 0\
+    - failed on trial 0 of 6\
+\
+  * n = 7\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  0  0  0  0  0  0  \
+      0  *  0  0  0  0  0  \
+      0  0  *  0  0  0  0  \
+      0  0  0  *  0  0  0  \
+      0  0  0  0  *  0  0  \
+      0  0  0  0  0  *  0  \
+      0  0  0  0  0  0  *  \
+\
+    - student output:\
+      *000000\
+      0*00000\
+      00*0000\
+      000*000\
+      0000*00\
+      00000*0\
+      000000*\
+\
+    - n = 7\
+    - width = 0\
+    - failed on trial 0 of 7\
+\
+==> FAILED\
+\
+Test 7: check correctness when width is fixed and n varies\
+  * width = 0\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  0  \
+      0  *  \
+\
+    - student output:\
+      *0\
+      0*\
+\
+    - n = 2\
+    - width = 0\
+    - failed on trial 2 of 10\
+\
+  * width = 1\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  *  \
+      *  *  \
+\
+    - student output:\
+      **\
+      **\
+\
+    - n = 2\
+    - width = 1\
+    - failed on trial 2 of 10\
+\
+  * width = 2\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  *  \
+      *  *  \
+\
+    - student output:\
+      *0\
+      0*\
+\
+    - n = 2\
+    - width = 2\
+    - failed on trial 2 of 10\
+\
+  * width = 3\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  *  *  \
+      *  *  *  \
+      *  *  *  \
+\
+    - student output:\
+      *00\
+      0*0\
+      00*\
+\
+    - n = 3\
+    - width = 3\
+    - failed on trial 3 of 10\
+\
+  * width = 4\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  *  *  *  \
+      *  *  *  *  \
+      *  *  *  *  \
+      *  *  *  *  \
+\
+    - student output:\
+      *000\
+      0*00\
+      00*0\
+      000*\
+\
+    - n = 4\
+    - width = 4\
+    - failed on trial 4 of 10\
+\
+  * width = 5\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  *  *  *  *  \
+      *  *  *  *  *  \
+      *  *  *  *  *  \
+      *  *  *  *  *  \
+      *  *  *  *  *  \
+\
+    - student output:\
+      *0000\
+      0*000\
+      00*00\
+      000*0\
+      0000*\
+\
+    - n = 5\
+    - width = 5\
+    - failed on trial 5 of 10\
+\
+  * width = 6\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  *  *  *  *  *  \
+      *  *  *  *  *  *  \
+      *  *  *  *  *  *  \
+      *  *  *  *  *  *  \
+      *  *  *  *  *  *  \
+      *  *  *  *  *  *  \
+\
+    - student output:\
+      *00000\
+      0*0000\
+      00*000\
+      000*00\
+      0000*0\
+      00000*\
+\
+    - n = 6\
+    - width = 6\
+    - failed on trial 6 of 10\
+\
+  * width = 7\
+    - student solution does not match reference solution\
+    - reference output:\
+      *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  \
+      *  *  *  *  *  *  *  \
+\
+    - student output:\
+      *000000\
+      0*00000\
+      00*0000\
+      000*000\
+      0000*00\
+      00000*0\
+      000000*\
+\
+    - n = 7\
+    - width = 7\
+    - failed on trial 7 of 10\
+\
+==> FAILED\
+\
+\
+BandMatrix Total: 0/7 tests passed!\
+\
+\
+================================================================\
+Testing correctness of RandomWalker\
+*-----------------------------------------------------------\
+Running 11 total tests.\
+\
+Test 1: check output format for inputs from assignment specification\
+  % java RandomWalker 3\
+  (0,0)\
+  (-1,0)\
+  (-2,0)\
+  (-2,1)\
+  steps = 3\
+\
+  % java RandomWalker 5\
+  (0,0)\
+  (1,0)\
+  (1,1)\
+  (1,0)\
+  (0,0)\
+  (0,1)\
+  (0,2)\
+  (1,2)\
+  (1,3)\
+  (1,4)\
+  steps = 9\
+\
+==> passed\
+\
+Test 2: check correctness of inputs from assignment specification\
+  * java RandomWalker 3\
+  * java RandomWalker 5\
+==> passed\
+\
+Test 3: check that random walk stops when distance r from origin\
+  * java RandomWalker 3\
+  * java RandomWalker 5\
+  * java RandomWalker 10\
+==> passed\
+\
+Test 4: check that first point in random walk is the origin\
+  * java RandomWalker 3\
+  * java RandomWalker 5\
+  * java RandomWalker 10\
+==> passed\
+\
+Test 5: check that successive points in random walk are neighbors\
+  * java RandomWalker 3\
+  * java RandomWalker 5\
+  * java RandomWalker 10\
+==> passed\
+\
+Test 6: check that number of steps printed is consistent with number of points printed\
+  * java RandomWalker 3\
+  * java RandomWalker 5\
+  * java RandomWalker 10\
+==> passed\
+\
+Test 7: check correctness for corner cases\
+  * java RandomWalker 0\
+  * java RandomWalker 1\
+==> passed\
+\
+Test 8: check that program produces different walks each time\
+  * java RandomWalker 6 [ twice ]\
+  * java RandomWalker 10 [ twice ]\
+  * java RandomWalker 20 [ twice ]\
+==> passed\
+\
+Test 9: check randomness of individual steps in walk\
+  * java RandomWalker 32\
+  * java RandomWalker 128\
+  * java RandomWalker 512\
+==> passed\
+\
+Test 10: check randomness of number of steps\
+  * java RandomWalker 2 [ repeated 1024 times ]\
+  * java RandomWalker 3 [ repeated 8192 times ]\
+  * java RandomWalker 4 [ repeated 32768 times ]\
+  * java RandomWalker 5 [ repeated 131072 times ]\
+==> passed\
+\
+Test 11: check what happens when Math.random() always returns the same value\
+  * Math.random() always returns 0.0\
+  * Math.random() always returns 0.25\
+  * Math.random() always returns 0.5\
+  * Math.random() always returns 0.75\
+==> passed\
+\
+\
+RandomWalker Total: 11/11 tests passed!\
+\
+\
+================================================================\
+Testing correctness of RandomWalkers\
+*-----------------------------------------------------------\
+Running 7 total tests.\
+\
+Test 1: check output format\
+  % java RandomWalkers 5 10000\
+  average number of steps = 15.0038\
+\
+  % java RandomWalkers 10 1000\
+  average number of steps = 58.24\
+\
+  % java RandomWalkers 20 123456\
+  average number of steps = 235.81363400725763\
+\
+  % java RandomWalkers 40 1\
+  average number of steps = 762.0\
+\
+  % java RandomWalkers 1 1000\
+  average number of steps = 1.0\
+\
+  % java RandomWalkers 1000 1\
+  average number of steps = 1109790.0\
+\
+  % java RandomWalkers 0 333\
+  average number of steps = 0.0\
+\
+==> passed\
+\
+Test 2: check average number of steps (trials = 10000)\
+  * java RandomWalkers 1 10000\
+  * java RandomWalkers 2 10000\
+  * java RandomWalkers 3 10000\
+  * java RandomWalkers 4 10000\
+  * java RandomWalkers 5 10000\
+  * java RandomWalkers 10 10000\
+  * java RandomWalkers 20 10000\
+  * java RandomWalkers 40 10000\
+==> passed\
+\
+Test 3: check average number of steps (radius = 5)\
+  * java RandomWalkers 5 100\
+  * java RandomWalkers 5 1000\
+  * java RandomWalkers 5 10000\
+  * java RandomWalkers 5 100000\
+  * java RandomWalkers 5 1000000\
+==> passed\
+\
+Test 4: check average number of steps (radius = 0)\
+  * java RandomWalkers 0 1000\
+  * java RandomWalkers 0 100\
+  * java RandomWalkers 0 1\
+==> passed\
+\
+Test 5: check that the average number of steps is not an integer\
+  * java RandomWalkers 10 1000\
+  * java RandomWalkers 7 2500\
+  * java RandomWalkers 3 10000\
+==> passed\
+\
+Test 6: check that program produces different result each time\
+  * java RandomWalkers 10 10000 [ repeated twice ]\
+  * java RandomWalkers 20 1000 [ repeated twice ]\
+  * java RandomWalkers 40 2000 [ repeated twice ]\
+==> passed\
+\
+Test 7: check randomness of average number of steps when trials = 1\
+  * java RandomWalkers 2 1 [ repeated 1024 times ]\
+  * java RandomWalkers 3 1 [ repeated 8192 times ]\
+  * java RandomWalkers 4 1 [ repeated 65536 times ]\
+  * java RandomWalkers 5 1 [ repeated 1048576 times ]\
+==> passed\
+\
+\
+RandomWalkers Total: 7/7 tests passed!\
+\
+\
+================================================================}
