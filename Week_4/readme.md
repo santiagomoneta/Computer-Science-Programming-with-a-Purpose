@@ -1,2 +1,8 @@
-- Week 4
-- HomeWork (?)
+- Week 4: Inputs & Outputs
+- HomeWork Score:
+- Libraries: https://introcs.cs.princeton.edu/java/stdlib/
+- How to use:
+	- In this section when you compile and run you will have to add the class path to the command so it load the `Standard Library`.
+- Example: (running from the same place where the stdlib is)
+	- `javac -cp $CLASSPATH:./stdlib.jar triangle.java`
+	- `java -cp $CLASSPATH:./stdlib.jar triangle`
