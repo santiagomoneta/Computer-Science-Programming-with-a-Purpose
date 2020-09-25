@@ -1,5 +1,6 @@
 - Week 4: Inputs & Outputs
-- HomeWork Score:
+- Assigments ([link](https://coursera.cs.princeton.edu/introcs/assignments/io/specification.php))
+- HomeWork Score: 100%
 - Libraries: https://introcs.cs.princeton.edu/java/stdlib/
 - How to use:
 	- In this section when you compile and run you will have to add the class path to the command so it load the `Standard Library`.
