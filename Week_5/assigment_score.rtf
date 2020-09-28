@@ -15,23 +15,23 @@ Compilation:  PASSED\
 API:          PASSED\
 \
 Spotbugs:     PASSED\
-PMD:          FAILED (1 warning)\
-Checkstyle:   FAILED (0 errors, 7 warnings)\
+PMD:          PASSED\
+Checkstyle:   FAILED (0 errors, 15 warnings)\
 \
-Correctness:  33/33 tests passed\
+Correctness:  51/61 tests passed\
 Memory:       No tests available for autograding.\
 Timing:       No tests available for autograding.\
 \
-Aggregate score: 100.00%\
+Aggregate score: 85.25%\
 [ Compilation: 5%, API: 5%, Style: 0%, Correctness: 90% ]\
 \
 ASSESSMENT DETAILS\
 \
 The following files were submitted:\
 ----------------------------------\
- 628 Sep 25 20:29 Checkerboard.java\
- 964 Sep 25 20:29 ShannonEntropy.java\
- 704 Sep 25 20:29 WorldMap.java\
+1.5K Sep 28 16:35 ActivationFunction.java\
+2.1K Sep 28 16:35 AudioCollage.java\
+1.9K Sep 28 16:35 Divisors.java\
 \
 \
 ********************************************************************************\
@@ -39,13 +39,13 @@ The following files were submitted:\
 ********************************************************************************\
 \
 \
-% javac ShannonEntropy.java\
+% javac ActivationFunction.java\
 *-----------------------------------------------------------\
 \
-% javac Checkerboard.java\
+% javac Divisors.java\
 *-----------------------------------------------------------\
 \
-% javac WorldMap.java\
+% javac AudioCollage.java\
 *-----------------------------------------------------------\
 \
 \
@@ -54,11 +54,11 @@ The following files were submitted:\
 \
 Checking the APIs of your programs.\
 *-----------------------------------------------------------\
-ShannonEntropy:\
+ActivationFunction:\
 \
-Checkerboard:\
+Divisors:\
 \
-WorldMap:\
+AudioCollage:\
 \
 ================================================================\
 \
@@ -70,6 +70,8 @@ WorldMap:\
 \
 % spotbugs *.class\
 *-----------------------------------------------------------\
+M D DLS_DEAD_LOCAL_STORE DLS: Assigns a value to the local variable 'A' but that value is never used.  At AudioCollage.java:[line 62]\
+M D DLS_DEAD_LOCAL_STORE DLS: Assigns a value to the local variable 'B' but that value is never used.  At AudioCollage.java:[line 63]\
 \
 \
 ================================================================\
@@ -77,8 +79,6 @@ WorldMap:\
 \
 % pmd .\
 *-----------------------------------------------------------\
-WorldMap.java:15: Avoid unused local variables, such as 'region'. [UnusedLocalVariable]\
-PMD ends with 1 warning.\
 \
 \
 ================================================================\
@@ -86,24 +86,31 @@ PMD ends with 1 warning.\
 \
 % checkstyle *.java\
 *-----------------------------------------------------------\
-[WARN] ShannonEntropy.java:18:16: The local variable 'shannon_entropy' must start with a lowercase letter and use camelCase. [LocalVariableName]\
-[WARN] WorldMap.java:19:13: 'for' is not followed by whitespace. [WhitespaceAfter]\
-[WARN] WorldMap.java:19:22: '=' is not followed by whitespace. [WhitespaceAround]\
-[WARN] WorldMap.java:19:22: '=' is not preceded with whitespace. [WhitespaceAround]\
-[WARN] WorldMap.java:19:27: '<' is not followed by whitespace. [WhitespaceAround]\
-[WARN] WorldMap.java:19:27: '<' is not preceded with whitespace. [WhitespaceAround]\
-Checkstyle ends with 0 errors and 6 warnings.\
+[WARN] ActivationFunction.java:7:14: 'if' is not followed by whitespace. [WhitespaceAfter]\
+[WARN] ActivationFunction.java:7:18: '==' is not followed by whitespace. [WhitespaceAround]\
+[WARN] ActivationFunction.java:7:18: '==' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] ActivationFunction.java:19:14: 'if' is not followed by whitespace. [WhitespaceAfter]\
+[WARN] AudioCollage.java:36:38: '?' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] AudioCollage.java:36:48: ':' is not followed by whitespace. [WhitespaceAround]\
+[WARN] AudioCollage.java:36:48: ':' is not preceded with whitespace. [WhitespaceAround]\
+[WARN] AudioCollage.java:49:21: Typecast is not followed by whitespace. [WhitespaceAfter]\
+[WARN] AudioCollage.java:53:25: Typecast is not followed by whitespace. [WhitespaceAfter]\
+[WARN] AudioCollage.java:62:18: The local variable 'A' must start with a lowercase letter and use camelCase. [LocalVariableName]\
+[WARN] AudioCollage.java:63:18: The local variable 'B' must start with a lowercase letter and use camelCase. [LocalVariableName]\
+[WARN] Divisors.java:24:18: '(' is followed by whitespace. [ParenPad]\
+[WARN] Divisors.java:30:9: Conditional logic can be removed. [SimplifyBooleanReturn]\
+[WARN] Divisors.java:60:13: The local variable 'eul_a' must start with a lowercase letter and use camelCase. [LocalVariableName]\
+[WARN] Divisors.java:61:13: The local variable 'eul_b' must start with a lowercase letter and use camelCase. [LocalVariableName]\
+Checkstyle ends with 0 errors and 15 warnings.\
 \
-% custom checkstyle checks for ShannonEntropy.java\
+% custom checkstyle checks for ActivationFunction.java\
 *-----------------------------------------------------------\
 \
-% custom checkstyle checks for Checkerboard.java\
+% custom checkstyle checks for Divisors.java\
 *-----------------------------------------------------------\
 \
-% custom checkstyle checks for WorldMap.java\
+% custom checkstyle checks for AudioCollage.java\
 *-----------------------------------------------------------\
-[WARN] WorldMap.java:1: You will get substantially improved performance if you call 'StdDraw.enableDoubleBuffering()' once at the beginning if this program and 'StdDraw.show()' once at the end of this program. [Design]\
-Checkstyle ends with 0 errors and 1 warning.\
 \
 \
 ================================================================\
@@ -113,349 +120,744 @@ Checkstyle ends with 0 errors and 1 warning.\
 *  TESTING CORRECTNESS\
 ********************************************************************************\
 \
-Testing correctness of ShannonEntropy\
+Testing correctness of ActivationFunction\
 *-----------------------------------------------------------\
-Running 12 total tests.\
+Running 17 total tests.\
 \
-Test 1: check output format\
-  % java-introcs ShannonEntropy 2 < fair-coin.txt\
-  1.0000\
+Test 1: check output format of main() for inputs from assignment specification\
+  % java ActivationFunction 0.0\
+   heaveside(0.0) = 0.5\
+     sigmoid(0.0) = 0.5\
+        tanh(0.0) = 0.0\
+    softsign(0.0) = 0.0\
+        sqnl(0.0) = 0.0\
 \
-  % java-introcs ShannonEntropy 6 < loaded-die.txt\
-  1.8750\
+  - line 0 of output in student solution: \
+   'heaveside(0.0) = 0.5'\
+  - the format of line 0 should be:\
+   'heaviside(<double>) = <double>\
 \
-  % java-introcs ShannonEntropy 100 < letters100.txt\
-  4.3798\
+  % java ActivationFunction 1.0\
+   heaveside(1.0) = 1.0\
+     sigmoid(1.0) = 0.7310585786300049\
+        tanh(1.0) = 0.7615941559557649\
+    softsign(1.0) = 0.5\
+        sqnl(1.0) = 0.75\
 \
+  - line 0 of output in student solution: \
+   'heaveside(1.0) = 1.0'\
+  - the format of line 0 should be:\
+   'heaviside(<double>) = <double>\
+\
+  % java ActivationFunction -0.5\
+   heaveside(-0.5) = 0.0\
+     sigmoid(-0.5) = 0.3775406687981454\
+        tanh(-0.5) = -0.4621171572600098\
+    softsign(-0.5) = -0.3333333333333333\
+        sqnl(-0.5) = -0.4375\
+\
+  - line 0 of output in student solution: \
+   'heaveside(-0.5) = 0.0'\
+  - the format of line 0 should be:\
+   'heaviside(<double>) = <double>\
+\
+==> FAILED\
+\
+Test 2: check correctness of main() for inputs from assignment specification\
+  * x = 0.0\
+    - could not parse value for heaviside()\
+\
+  * x = 1.0\
+    - could not parse value for heaviside()\
+\
+  * x = -0.5\
+    - could not parse value for heaviside()\
+\
+==> FAILED\
+\
+Test 3: check correctness of heaviside() for given x\
+  * heaviside(0.0)\
+  * heaviside(0.5)\
+  * heaviside(1.0)\
+  * heaviside(2.0)\
+  * heaviside(-1.0)\
+  * heaviside(0.499999999999999944488848768742172978818416595458984375)\
+  * heaviside(0.50000000000000011102230246251565404236316680908203125)\
+  * heaviside(0.99999999999999988897769753748434595763683319091796875)\
+  * heaviside(1.0000000000000002220446049250313080847263336181640625)\
 ==> passed\
 \
-Test 2: check that program reads all data from standard input\
-  * java-introcs ShannonEntropy < fair-coin.txt\
-  * java-introcs ShannonEntropy < loaded-die.txt\
-  * java-introcs ShannonEntropy < letters100.txt\
+Test 4: check heaviside() for special values of x\
+  * heaviside(Double.POSITIVE_INFINITY)\
+  * heaviside(Double.NEGATIVE_INFINITY)\
+  * heaviside(Double.NaN)\
+    - heaviside() returns wrong value\
+    - student   heaviside(x) = 1.0\
+    - reference heaviside(x) = NaN\
+\
+  * heaviside(-0.0)\
+  * heaviside(Double.MIN_NORMAL)\
+  * heaviside(Double.MAX_VALUE)\
+  * heaviside(Double.MIN_VALUE)\
+  * heaviside(-Double.MAX_VALUE)\
+  * heaviside(-Double.MIN_VALUE)\
+==> FAILED\
+\
+Test 5: check correctness of heaviside() for random x\
+  * 10000 trials with x between 0.0 and 1.0\
+  * 10000 trials with x between -1.0 and 0.0\
+  * 10000 trials with x between 1.0 and 2.0\
+  * 10000 trials with x between 2.0 and 10.0\
+  * 10000 trials with x between -2.0 and 1.0\
+  * 10000 trials with x between -10.0 and 10.0\
 ==> passed\
 \
-Test 3: check correctness for fixed inputs\
-  * java-introcs ShannonEntropy 2 < fair-coin.txt\
-  * java-introcs ShannonEntropy 2 < biased-coin.txt\
-  * java-introcs ShannonEntropy 6 < loaded-die.txt\
-  * java-introcs ShannonEntropy 100 < letters100.txt\
-  * java-introcs ShannonEntropy 3 < roshambo.txt\
+Test 6: check correctness of sigmoid() for given x\
+  * sigmoid(0.0)\
+  * sigmoid(0.5)\
+  * sigmoid(1.0)\
+  * sigmoid(2.0)\
+  * sigmoid(-1.0)\
+  * sigmoid(-2.0)\
 ==> passed\
 \
-Test 4: check correctness when entropy is 0\
-  * m = 1, all 1s\
-  * m = 2, all 1s\
-  * m = 2, all 2s\
-  * m = 6, all 1s\
-  * m = 6, all 3s\
-  * m = 6, all 6s\
-  * m = 100, all 100s\
+Test 7: check sigmoid() for special values of x\
+  * sigmoid(Double.POSITIVE_INFINITY)\
+  * sigmoid(Double.NEGATIVE_INFINITY)\
+  * sigmoid(Double.NaN)\
+  * sigmoid(-0.0)\
+  * sigmoid(Double.MIN_NORMAL)\
+  * sigmoid(Double.MAX_VALUE)\
+  * sigmoid(Double.MIN_VALUE)\
+  * sigmoid(-Double.MAX_VALUE)\
+  * sigmoid(-Double.MIN_VALUE)\
 ==> passed\
 \
-Test 5: check correctness for random inputs with p_i > 0 for all i\
-  * 10 random integers between 1 and 2\
-  * 100 random integers between 1 and 2\
-  * 20 random integers between 1 and 6\
-  * 1000 random integers between 1 and 6\
-  * 1000 random integers between 1 and 26\
+Test 8: check correctness of sigmoid() for random x\
+  * 10000 trials with x between 0.0 and 1.0\
+  * 10000 trials with x between -1.0 and 0.0\
+  * 10000 trials with x between 1.0 and 2.0\
+  * 10000 trials with x between 2.0 and 10.0\
+  * 10000 trials with x between -2.0 and 1.0\
+  * 10000 trials with x between -10.0 and 10.0\
 ==> passed\
 \
-Test 6: check correctness for random inputs with p_m = 0\
-  * 10 random integers between 1 and 6\
-  * 50 random integers between 1 and 10\
+Test 9: check correctness of tanh() for given x\
+  * tanh(0.0)\
+  * tanh(0.5)\
+  * tanh(1.0)\
+  * tanh(2.0)\
+  * tanh(-1.0)\
+  * tanh(-2.0)\
 ==> passed\
 \
-Test 7: check correctness for random inputs with p_i = 0 for some i\
-  * 10 random integers between 1 and 6\
-  * 100 random integers between 1 and 6\
-  * 50 random integers between 1 and 26\
-  * 1000 random integers between 1 and 26\
+Test 10: check tanh() for special values of x\
+  * tanh(Double.POSITIVE_INFINITY)\
+  * tanh(Double.NEGATIVE_INFINITY)\
+  * tanh(Double.NaN)\
+  * tanh(-0.0)\
+  * tanh(Double.MIN_NORMAL)\
+  * tanh(Double.MAX_VALUE)\
+  * tanh(Double.MIN_VALUE)\
+  * tanh(-Double.MAX_VALUE)\
+  * tanh(-Double.MIN_VALUE)\
 ==> passed\
 \
-Test 8: check correctness for random inputs with m = n\
-  * 2 random integers between 1 and 2\
-  * 3 random integers between 1 and 3\
-  * 4 random integers between 1 and 4\
-  * 6 random integers between 1 and 6\
+Test 11: check correctness of tanh() for random x\
+  * 10000 trials with x between 0.0 and 1.0\
+  * 10000 trials with x between -1.0 and 0.0\
+  * 10000 trials with x between 1.0 and 2.0\
+  * 10000 trials with x between 2.0 and 10.0\
+  * 10000 trials with x between -2.0 and 1.0\
+  * 10000 trials with x between -10.0 and 10.0\
 ==> passed\
 \
-Test 9: check correctness for random inputs with m > n\
-  * 3 random integers between 1 and 6\
-  * 10 random integers between 1 and 26\
+Test 12: check correctness of softsign() for given x\
+  * softsign(0.0)\
+  * softsign(0.5)\
+  * softsign(1.0)\
+  * softsign(2.0)\
+  * softsign(-1.0)\
+  * softsign(-2.0)\
 ==> passed\
 \
-Test 10: check correctness for inputs with large n\
-  * java-introcs ShannonEntropy 26 < letters.txt\
+Test 13: check softsign() for special values of x\
+  * softsign(Double.POSITIVE_INFINITY)\
+    - softsign() returns wrong value\
+    - student   softsign(x) = NaN\
+    - reference softsign(x) = 1.0\
+\
+  * softsign(Double.NEGATIVE_INFINITY)\
+    - softsign() returns wrong value\
+    - student   softsign(x) = NaN\
+    - reference softsign(x) = -1.0\
+\
+  * softsign(Double.NaN)\
+  * softsign(-0.0)\
+  * softsign(Double.MIN_NORMAL)\
+  * softsign(Double.MAX_VALUE)\
+  * softsign(Double.MIN_VALUE)\
+  * softsign(-Double.MAX_VALUE)\
+  * softsign(-Double.MIN_VALUE)\
+==> FAILED\
+\
+Test 14: check correctness of softsign() for random x\
+  * 10000 trials with x between 0.0 and 1.0\
+  * 10000 trials with x between -1.0 and 0.0\
+  * 10000 trials with x between 1.0 and 2.0\
+  * 10000 trials with x between 2.0 and 10.0\
+  * 10000 trials with x between -2.0 and 1.0\
+  * 10000 trials with x between -10.0 and 10.0\
 ==> passed\
 \
-Test 11: check correctness for inputs with large m\
-  * java-introcs ShannonEntropy 1000000 < ids20.txt\
+Test 15: check correctness of sqnl() for given x\
+  * sqnl(0.0)\
+  * sqnl(0.5)\
+  * sqnl(1.0)\
+  * sqnl(2.0)\
+  * sqnl(-1.0)\
+  * sqnl(-2.0)\
+  * sqnl(1.9999999999999997779553950749686919152736663818359375)\
+  * sqnl(2.000000000000000444089209850062616169452667236328125)\
+  * sqnl(-2.000000000000000444089209850062616169452667236328125)\
+  * sqnl(-1.9999999999999997779553950749686919152736663818359375)\
 ==> passed\
 \
-Test 12: check correctness for inputs with large m and n\
-  * java-introcs ShannonEntropy 1000000 < ids100000.txt\
-  * java-introcs ShannonEntropy 1000000 < ids1000000.txt\
+Test 16: check sqnl() for special values of x\
+  * sqnl(Double.POSITIVE_INFINITY)\
+  * sqnl(Double.NEGATIVE_INFINITY)\
+  * sqnl(Double.NaN)\
+    - sqnl() returns wrong value\
+    - student   sqnl(x) = 1.0\
+    - reference sqnl(x) = NaN\
+\
+  * sqnl(-0.0)\
+  * sqnl(Double.MIN_NORMAL)\
+  * sqnl(Double.MAX_VALUE)\
+  * sqnl(Double.MIN_VALUE)\
+  * sqnl(-Double.MAX_VALUE)\
+  * sqnl(-Double.MIN_VALUE)\
+==> FAILED\
+\
+Test 17: check correctness of sqnl() for random x\
+  * 10000 trials with x between 0.0 and 1.0\
+  * 10000 trials with x between -1.0 and 0.0\
+  * 10000 trials with x between 1.0 and 2.0\
+  * 10000 trials with x between 2.0 and 10.0\
+  * 10000 trials with x between -2.0 and 1.0\
+  * 10000 trials with x between -10.0 and 10.0\
 ==> passed\
 \
-Total: 12/12 tests passed!\
+\
+ActivationFunction Total: 12/17 tests passed!\
 \
 \
 ================================================================\
-Testing correctness of Checkerboard\
+Testing correctness of Divisors\
 *-----------------------------------------------------------\
-Running 12 total tests.\
+Running 24 total tests.\
 \
-Test 1: check output format\
-  % java Checkerboard 1\
-  [no output]\
+Test 1: check output format of main() for given command-line arguments\
+  % java Divisors 1440 408\
+                 gcd(1440, 408) = 24\
+                 lcm(1440, 408) = 24480\
+  areRelativelyPrime(1440, 408) = false\
+                  totient(1440) = 384\
+                  totient(408) = 128\
 \
-  % java Checkerboard 2\
-  [no output]\
-\
-  % java Checkerboard 3\
-  [no output]\
-\
-  % java Checkerboard 4\
-  [no output]\
-\
-  % java Checkerboard 5\
-  [no output]\
-\
-  % java Checkerboard 6\
-  [no output]\
+  % java Divisors 987 610\
+                 gcd(987, 610) = 1\
+                 lcm(987, 610) = 602070\
+  areRelativelyPrime(987, 610) = true\
+                  totient(987) = 552\
+                  totient(610) = 240\
 \
 ==> passed\
 \
-Test 2: check formatting of standard drawing\
-  * java Checkerboard 1\
-  [no output]\
-\
-  * java Checkerboard 2\
-  [no output]\
-\
-  * java Checkerboard 3\
-  [no output]\
-\
-  * java Checkerboard 4\
-  [no output]\
-\
-  * java Checkerboard 5\
-  [no output]\
-\
-  * java Checkerboard 6\
-  [no output]\
-\
+Test 2: check that main() prints correct values for given command-line arguments\
+  * a = 1440, b = 408\
+  * a = 987, b = 610\
 ==> passed\
 \
-Test 3: check number of filled polygons\
-  * n = 1\
-  * n = 2\
-  * n = 3\
-  * n = 4\
-  * n = 5\
-  * n = 6\
+Test 3: check correctness of gcd() for given a and b\
+  * gcd(1440, 408)\
+  * gcd(408, 1440)\
+  * gcd(210, 45)\
+  * gcd(3571, 60707)\
+  * gcd(196418, 317811)\
+  * gcd(2147483600, 1857573314)\
 ==> passed\
 \
-Test 4: check correctness, ignoring color\
-  * n = 1\
-  * n = 2\
-  * n = 3\
-  * n = 4\
-  * n = 5\
-  * n = 6\
+Test 4: check correctness of gcd() with a or b negative\
+  * gcd(-1440, 408)\
+  * gcd(1440, -408)\
+  * gcd(-1440, -408)\
+  * gcd(-408, 1440)\
+  * gcd(408, -1440)\
+  * gcd(-408, -1440)\
 ==> passed\
 \
-Test 5: check that lower-left square is blue for odd n\
-  * n = 1\
-  * n = 3\
-  * n = 5\
-  * n = 7\
-  * n = 9\
+Test 5: check correctness of gcd() with |p| or |q| close to 2^31\
+  * gcd(-2147483647, 2147483647)\
+  * gcd(-2147483647, -2147483647)\
+  * gcd(2147483647, -2147483647)\
+  * gcd(2147483647, 2147483647)\
+  * gcd(-2147483600, 1857573314)\
+  * gcd(2147483600, -1857573314)\
 ==> passed\
 \
-Test 6: check that lower-left square is blue for even n\
-  * n = 2\
-  * n = 4\
-  * n = 6\
-  * n = 8\
-  * n = 10\
+Test 6: check correctness of gcd() with a = 0 or b = 0\
+  * gcd(0, 1)\
+  * gcd(0, 2)\
+  * gcd(0, 5)\
+  * gcd(0, -10)\
+  * gcd(0, 123456789)\
+  * gcd(1, 0)\
+  * gcd(2, 0)\
+  * gcd(5, 0)\
+  * gcd(-10, 0)\
+  * gcd(123456789, 0)\
+  * gcd(0, 0)\
 ==> passed\
 \
-Test 7: check that lower-left square is blue for large n\
-  * 10 <= n < 20\
-  * 20 <= n < 30\
-  * 30 <= n < 50\
+Test 7: check that gcd(a, b) = gcd(b, a) for random a and b\
+  * 1000 trials with a and b between 1 and 10\
+  * 1000 trials with a and b between 1 and 1000\
+  * 1000 trials with a and b between 1 and 1000000\
+  * 1000 trials with a and b between 1 and 100000000\
+  * 1000 trials with a and b between -10 and 10\
+  * 1000 trials with a and b between -1000 and 1000\
+  * 1000 trials with a and b between -100000 and 100000\
+  * 1000 trials with a and b between -10000000 and 10000000\
 ==> passed\
 \
-Test 8: check that it draws a checkerboard pattern for even n\
-  * n = 2\
-  * n = 4\
-  * n = 6\
-  * n = 8\
-  * n = 10\
+Test 8: check correctness of gcd() for random a and b\
+  * 1000 trials with a and b between 1 and 10\
+  * 1000 trials with a and b between 1 and 1000\
+  * 1000 trials with a and b between 1 and 1000000\
+  * 1000 trials with a and b between 1 and 100000000\
+  * 1000 trials with a and b between -10 and 10\
+  * 1000 trials with a and b between -1000 and 1000\
+  * 1000 trials with a and b between -100000 and 100000\
+  * 1000 trials with a and b between -10000000 and 10000000\
 ==> passed\
 \
-Test 9: check that it draws a checkerboard pattern for odd n\
-  * n = 1\
-  * n = 3\
-  * n = 5\
-  * n = 7\
-  * n = 9\
+Test 9: check correctness of lcm() for given a and b\
+  * lcm(96, 56)\
+  * lcm(56, 96)\
+  * lcm(210, 45)\
+  * lcm(3571, 60707)\
 ==> passed\
 \
-Test 10: check that it draws a checkerboard pattern for larger n\
-  * 10 <= n < 20\
-  * 20 <= n < 30\
-  * 30 <= n < 50\
+Test 10: check correctness of lcm() for a and b that might cause overflow\
+  * lcm(5772000, 2652000)\
+    - lcm() returns wrong value\
+    - student   lcm(a, b) = 516\
+    - reference lcm(a, b) = 98124000\
+\
+  * lcm(2652000, 5772000)\
+    - lcm() returns wrong value\
+    - student   lcm(a, b) = 516\
+    - reference lcm(a, b) = 98124000\
+\
+  * lcm(1640957, 1653787)\
+    - lcm() returns wrong value\
+    - student   lcm(a, b) = -487900\
+    - reference lcm(a, b) = 2115193573\
+\
+  * lcm(1653787, 1640957)\
+    - lcm() returns wrong value\
+    - student   lcm(a, b) = -487900\
+    - reference lcm(a, b) = 2115193573\
+\
+  * lcm(2137049094, 15485863)\
+    - lcm() returns wrong value\
+    - student   lcm(a, b) = -43\
+    - reference lcm(a, b) = 2137049094\
+\
+  * lcm(15485863, 2137049094)\
+    - lcm() returns wrong value\
+    - student   lcm(a, b) = -43\
+    - reference lcm(a, b) = 2137049094\
+\
+==> FAILED\
+\
+Test 11: check correctness of lcm() with a or b negative\
+  * lcm(96, -56)\
+  * lcm(-96, 56)\
+  * lcm(-96, -56)\
+  * lcm(56, -96)\
+  * lcm(-56, 96)\
+  * lcm(-56, -96)\
 ==> passed\
 \
-Test 11: check number of calls to StdDraw.setXscale() and StdDraw.setYscale()\
-  * n = 2\
-  * n = 4\
-  * n = 6\
-  * n = 8\
-  * n = 9\
+Test 12: check correctness of lcm() with a = 0 or b = 0\
+  * lcm(0, 1)\
+  * lcm(0, 2)\
+  * lcm(0, 5)\
+  * lcm(0, -10)\
+  * lcm(0, 123456789)\
+  * lcm(1, 0)\
+  * lcm(2, 0)\
+  * lcm(5, 0)\
+  * lcm(-10, 0)\
+  * lcm(123456789, 0)\
+  * lcm(0, 0)\
 ==> passed\
 \
-Test 12: check arguments to StdDraw.setXscale() and StdDraw.setYscale()\
-  * n = 2\
-  * n = 4\
-  * n = 6\
-  * n = 8\
-  * n = 9\
+Test 13: check that lcm(a, b) = lcm(b, a) for random a and b\
+  * 1000 trials with a and b between 1 and 10\
+  * 1000 trials with a and b between 1 and 100\
+  * 1000 trials with a and b between 1 and 10000\
+  * 1000 trials with a and b between 1 and 100000\
+  * 1000 trials with a and b between -10 and 10\
+  * 1000 trials with a and b between -100 and 100\
+  * 1000 trials with a and b between -1000 and 1000\
+  * 1000 trials with a and b between -10000 and 10000\
 ==> passed\
 \
+Test 14: check correctness of lcm() for random a and b\
+  * 1000 trials with a and b between 1 and 10\
+  * 1000 trials with a and b between 1 and 100\
+  * 1000 trials with a and b between 1 and 1000\
+  * 1000 trials with a and b between 1 and 10000\
+  * 1000 trials with a and b between -10 and 10\
+  * 1000 trials with a and b between -100 and 100\
+  * 1000 trials with a and b between -1000 and 1000\
+  * 1000 trials with a and b between -10000 and 10000\
+==> passed\
 \
-Checkerboard Total: 12/12 tests passed!\
+Test 15: check correctness of areRelativelyPrime() for given a and b\
+  * areRelativelyPrime(1440, 408)\
+  * areRelativelyPrime(408, 1440)\
+  * areRelativelyPrime(210, 45)\
+  * areRelativelyPrime(3571, 60707)\
+  * areRelativelyPrime(196418, 317811)\
+  * areRelativelyPrime(2147483600, 1857573314)\
+==> passed\
+\
+Test 16: check correctness of areRelativelyPrime() with a = 0 or b = 0\
+  * areRelativelyPrime(0, 1)\
+  * areRelativelyPrime(0, 2)\
+  * areRelativelyPrime(0, 5)\
+  * areRelativelyPrime(0, -10)\
+  * areRelativelyPrime(0, 123456789)\
+  * areRelativelyPrime(1, 0)\
+  * areRelativelyPrime(2, 0)\
+  * areRelativelyPrime(5, 0)\
+  * areRelativelyPrime(-10, 0)\
+  * areRelativelyPrime(123456789, 0)\
+  * areRelativelyPrime(0, 0)\
+==> passed\
+\
+Test 17: check that areRelativelyPrime(a, b) = areRelativelyPrime(b, a) for random a and b\
+  * 1000 trials with a and b between 1 and 10\
+  * 1000 trials with a and b between 1 and 100\
+  * 1000 trials with a and b between 1 and 10000\
+  * 1000 trials with a and b between 1 and 100000\
+  * 1000 trials with a and b between -10 and 10\
+  * 1000 trials with a and b between -100 and 100\
+  * 1000 trials with a and b between -1000 and 1000\
+  * 1000 trials with a and b between -10000 and 10000\
+==> passed\
+\
+Test 18: check that areRelativelyPrime() is consistent with gcd() for random a and b\
+  * 1000 trials with a and b between 0 and 10\
+  * 1000 trials with a and b between 0 and 1000\
+  * 1000 trials with a and b between 0 and 1000000\
+  * 1000 trials with a and b between 0 and 100000000\
+  * 1000 trials with a and b between -10 and 10\
+  * 1000 trials with a and b between -1000 and 1000\
+  * 1000 trials with a and b between -100000 and 100000\
+  * 1000 trials with a and b between -10000000 and 10000000\
+==> passed\
+\
+Test 19: check correctness of areRelativelyPrime() for random a and b\
+  * 1000 trials with a and b between 1 and 10\
+  * 1000 trials with a and b between 1 and 1000\
+  * 1000 trials with a and b between 1 and 1000000\
+  * 1000 trials with a and b between 1 and 100000000\
+  * 1000 trials with a and b between -10 and 10\
+  * 1000 trials with a and b between -1000 and 1000\
+  * 1000 trials with a and b between -100000 and 100000\
+  * 1000 trials with a and b between -10000000 and 10000000\
+==> passed\
+\
+Test 20: check correctness of totient() for given n\
+  * totient(9)\
+  * totient(56)\
+  * totient(96)\
+  * totient(408)\
+  * totient(1440)\
+  * totient(42473)\
+==> passed\
+\
+Test 21: check correctness of totient() for small n\
+  * totient(0)\
+  * totient(1)\
+    - totient() returns wrong value\
+    - student   totient(n) = 0\
+    - reference totient(n) = 1\
+\
+  * totient(2)\
+  * totient(3)\
+  * totient(-1)\
+  * totient(-2)\
+  * totient(-3)\
+==> FAILED\
+\
+Test 22: check that totient(n) = n-1 when n is prime\
+  * 1000 trials with n between 2 and 1000\
+  * 1000 trials with n between 2 and 10000\
+  * 100 trials with n between 2 and 100000\
+==> passed\
+\
+Test 23: check that totient() is consistent with areRelativelyPrime()\
+  * 100 trials with n between 1 and 10\
+    - totient() is inconsistent with areRelativelyPrime()\
+    - student totient(n) = 0\
+    - student areRelativelyPrime(i, n) is true for 1 values of i\
+    - i = [1]\
+    - n = 1\
+    - failed on trial 3 of 100\
+\
+  * 100 trials with n between 1 and 100\
+    - totient() is inconsistent with areRelativelyPrime()\
+    - student totient(n) = 0\
+    - student areRelativelyPrime(i, n) is true for 1 values of i\
+    - i = [1]\
+    - n = 1\
+    - failed on trial 21 of 100\
+\
+  * 100 trials with n between 1 and 1000\
+  * 100 trials with n between 1 and 10000\
+  * 10 trials with n between 1 and 100000\
+==> FAILED\
+\
+Test 24: check correctness of totient() for random n\
+  * 1000 trials with n between 1 and 10\
+    - totient() returns wrong value\
+    - student   totient(n) = 0\
+    - reference totient(n) = 1\
+    - n = 1\
+    - failed on trial 3 of 1000\
+\
+  * 1000 trials with n between 1 and 100\
+    - totient() returns wrong value\
+    - student   totient(n) = 0\
+    - reference totient(n) = 1\
+    - n = 1\
+    - failed on trial 53 of 1000\
+\
+  * 1000 trials with n between 1 and 1000\
+    - totient() returns wrong value\
+    - student   totient(n) = 0\
+    - reference totient(n) = 1\
+    - n = 1\
+    - failed on trial 18 of 1000\
+\
+  * 1000 trials with n between 1 and 10000\
+  * 100 trials with n between 1 and 100000\
+  * 100 trials with n between -100000 and -1\
+==> FAILED\
+\
+\
+Divisors Total: 20/24 tests passed!\
 \
 \
 ================================================================\
-Testing correctness of WorldMap\
+Testing correctness of AudioCollage\
 *-----------------------------------------------------------\
-Running 9 total tests.\
+Running 20 total tests.\
 \
-Test 1: check formatting of standard output\
-  % java WorldMap < square.txt\
-  [no output]\
+Test 1: check correctness of amplify() for random a[] and given alpha\
+  * 1000 trials, n =  2, alpha = 1.0\
+  * 1000 trials, n =  3, alpha = 2.0\
+  * 1000 trials, n =  4, alpha = 0.5\
+  * 1000 trials, n =  5, alpha = 1.0\
+  * 1000 trials, n =  6, alpha = 2.0\
+  * 1000 trials, n = 10, alpha = 0.5\
+  * 1000 trials, n = 20, alpha = 0.25\
+==> passed\
 \
-  % java WorldMap < shapes.txt\
-  [no output]\
+Test 2: check correctness of amplify() for given .wav file and alpha\
+  * file = silence.wav, alpha = 1.0\
+  * file = silence.wav, alpha = 0.5\
+  * file = silence.wav, alpha = 2.0\
+  * file = buzzer.wav, alpha = 1.0\
+  * file = buzzer.wav, alpha = 0.5\
+  * file = buzzer.wav, alpha = 2.0\
+==> passed\
 \
-  % java WorldMap < usa.txt\
-  [no output]\
+Test 3: check correctness of reverse() for random a[]\
+  * 1000 trials, n = 2\
+  * 1000 trials, n = 3\
+  * 1000 trials, n = 4\
+  * 1000 trials, n = 5\
+  * 1000 trials, n = 6\
+  * 1000 trials, n = 10\
+  * 1000 trials, n = 20\
+==> passed\
 \
-  % java WorldMap < russia.txt\
-  [no output]\
+Test 4: check correctness of reverse() for given .wav file\
+  * file = silence.wav\
+  * file = buzzer.wav\
+  * file = cow.wav\
+  * file = harp.wav\
+  * file = scratch.wav\
+==> passed\
 \
-  % java WorldMap < india.txt\
-  [no output]\
+Test 5: check correctness of merge() for random a[] and b[]\
+  * 1000 trials, m =  2, n =  2\
+  * 1000 trials, m =  3, n =  3\
+  * 1000 trials, m =  4, n =  5\
+  * 1000 trials, m =  5, n =  4\
+  * 1000 trials, m =  6, n =  8\
+  * 1000 trials, m = 10, n =  3\
+  * 1000 trials, m = 20, n = 30\
+==> passed\
 \
-  % java WorldMap < world-low-resolution.txt\
+Test 6: check correctness of merge() for given .wav files\
+  * file1 = silence.wav, file2 = silence.wav\
+  * file1 =  buzzer.wav, file2 =  buzzer.wav\
+  * file1 =     cow.wav, file2 =     cow.wav\
+  * file1 =  buzzer.wav, file2 =     cow.wav\
+  * file1 =     cow.wav, file2 =  buzzer.wav\
+  * file1 =    harp.wav, file2 = scratch.wav\
+  * file1 = scratch.wav, file2 =    harp.wav\
+==> passed\
+\
+Test 7: check correctness of mix() for random a[] and b[] with m = n\
+  * 1000 trials, m =  2, n =  2\
+  * 1000 trials, m =  3, n =  3\
+  * 1000 trials, m =  4, n =  4\
+  * 1000 trials, m =  5, n =  5\
+  * 1000 trials, m =  6, n =  6\
+  * 1000 trials, m = 10, n = 10\
+  * 1000 trials, m = 20, n = 20\
+==> passed\
+\
+Test 8: check correctness of mix() for random a[] and b[] with m != n\
+  * 1000 trials, m =  2, n =  3\
+  * 1000 trials, m =  4, n =  3\
+  * 1000 trials, m =  4, n =  6\
+  * 1000 trials, m =  8, n =  4\
+  * 1000 trials, m =  6, n =  8\
+  * 1000 trials, m = 11, n = 10\
+  * 1000 trials, m = 20, n = 30\
+==> passed\
+\
+Test 9: check correctness of mix() for given .wav files\
+  * file1 = silence.wav, file2 = silence.wav\
+  * file1 =  buzzer.wav, file2 =  buzzer.wav\
+  * file1 =     cow.wav, file2 =     cow.wav\
+  * file1 =  buzzer.wav, file2 =     cow.wav\
+  * file1 =     cow.wav, file2 =  buzzer.wav\
+  * file1 =    harp.wav, file2 = scratch.wav\
+  * file1 = scratch.wav, file2 =    harp.wav\
+==> passed\
+\
+Test 10: check correctness of changeSpeed() for random a[] and given alpha\
+         with alpha * n integral\
+  * 1000 trials, n =  2, alpha = 1.0\
+  * 1000 trials, n =  3, alpha = 2.0\
+  * 1000 trials, n =  4, alpha = 0.5\
+  * 1000 trials, n =  5, alpha = 1.0\
+  * 1000 trials, n =  6, alpha = 2.0\
+  * 1000 trials, n = 10, alpha = 0.5\
+  * 1000 trials, n = 20, alpha = 0.25\
+==> passed\
+\
+Test 11: check correctness of changeSpeed() for random a[] and given alpha,\
+         with alpha * n fractional\
+  * 1000 trials, n =  2, alpha = 2.75\
+  * 1000 trials, n =  3, alpha = 3.5\
+  * 1000 trials, n =  4, alpha = 9.875\
+  * 1000 trials, n =  5, alpha = 0.5\
+  * 1000 trials, n =  6, alpha = 0.25\
+  * 1000 trials, n = 10, alpha = 0.375\
+  * 1000 trials, n = 20, alpha = 0.9375\
+==> passed\
+\
+Test 12: check correctness of changeSpeed() for random a[] and random alpha\
+  * 1000 trials, n =  2\
+  * 1000 trials, n =  3\
+  * 1000 trials, n =  4\
+  * 1000 trials, n =  5\
+  * 1000 trials, n =  6\
+  * 1000 trials, n = 10\
+  * 1000 trials, n = 20\
+==> passed\
+\
+Test 13: check correctness of changeSpeed() for given .wav file and alpha\
+  * file = silence.wav, alpha = 1.0\
+  * file = silence.wav, alpha = 0.5\
+  * file = silence.wav, alpha = 2.0\
+  * file = buzzer.wav, alpha = 1.0\
+  * file = buzzer.wav, alpha = 0.5\
+  * file = buzzer.wav, alpha = 2.0\
+==> passed\
+\
+Test 14: check that amplify() does not mutate a[]\
+  * trials = 10, n =  3, alpha = 0.5\
+  * trials = 10, n =  5, alpha = 0.75\
+  * trials = 10, n =  7, alpha = 2.0\
+  * trials = 10, n = 10, alpha = 1.5\
+==> passed\
+\
+Test 15: check that reverse() does not mutate a[]\
+  * trials = 10, n =  3\
+  * trials = 10, n =  5\
+  * trials = 10, n =  7\
+  * trials = 10, n = 10\
+==> passed\
+\
+Test 16: check that merge() does not mutate either a[] or b[]\
+  * trials = 10, m =  3, n =  3\
+  * trials = 10, m =  4, n =  5\
+  * trials = 10, m =  5, n =  4\
+  * trials = 10, m = 10, n =  3\
+  * trials = 10, m = 20, n = 30\
+==> passed\
+\
+Test 17: check that mix() does not mutate either a[] or b[]\
+  * trials = 10, m =  3, n =  3\
+  * trials = 10, m =  4, n =  5\
+  * trials = 10, m =  5, n =  4\
+  * trials = 10, m = 10, n =  3\
+  * trials = 10, m = 20, n = 30\
+==> passed\
+\
+Test 18: check that changeSpeed() does not mutate a[]\
+  * trials = 10, n =  3, alpha = 1.0\
+  * trials = 10, n =  5, alpha = 2.0\
+  * trials = 10, n =  8, alpha = 0.5\
+  * trials = 10, n = 10, alpha = 0.75\
+==> passed\
+\
+Test 19: check output format of main()\
+  % java AudioCollage\
   [no output]\
 \
 ==> passed\
 \
-Test 2: check that program reads all data from standard input\
-  * java-introcs WorldMap < square.txt\
-  * java-introcs WorldMap < shapes.txt\
-  * java-introcs WorldMap < usa.txt\
-  * java-introcs WorldMap < russia.txt\
-  * java-introcs WorldMap < india.txt\
-==> passed\
+Test 20: check that main() produces valid sound\
+  * sound is of correct duration\
+    - duration is not between 10 and 60 seconds\
+    - duration = 74.34 seconds (3278259 samples)\
 \
-Test 3: check formatting of standard drawing\
-  * java WorldMap < square.txt\
-  [no output]\
+  * samples are in specified range\
+    - sample 57659 of 3278259 is invalid\
+    - value of sample 57659 = 1.014312744140625\
 \
-  * java WorldMap < shapes.txt\
-  [no output]\
-\
-  * java WorldMap < usa.txt\
-  [no output]\
-\
-  * java WorldMap < russia.txt\
-  [no output]\
-\
-  * java WorldMap < india.txt\
-  [no output]\
-\
-  * java WorldMap < world-low-resolution.txt\
-  [no output]\
-\
-==> passed\
-\
-Test 4: check number of polygons\
-  * file = square.txt\
-  * file = shapes.txt\
-  * file = usa.txt\
-  * file = russia.txt\
-  * file = india.txt\
-  * file = world-low-resolution.txt\
-==> passed\
-\
-Test 5: check correctness for input files\
-  * Square                         square.txt                    \
-  * Triange, Square, and Pentagon  shapes.txt                    \
-  * USA                            usa.txt                       \
-  * Russia                         russia.txt                    \
-  * India                          india.txt                     \
-  * World (low resolution)         world-low-resolution.txt      \
-==> passed\
-\
-Test 6: check correctness for input files with one polygon\
-  * Hilbert polygon of order 1     hilbert1.txt                  \
-  * Hilbert polygon of order 2     hilbert2.txt                  \
-  * Hilbert polygon of order 3     hilbert3.txt                  \
-  * Hilbert polygon of order 4     hilbert4.txt                  \
-  * Hilbert polygon of order 5     hilbert5.txt                  \
-  * Hilbert polygon of order 6     hilbert6.txt                  \
-==> passed\
-\
-Test 7: check correctness for random countries\
-  * Serbia                         world/serbia.txt              \
-  * Tajikistan                     world/tajikistan.txt          \
-  * Brunei Darussalam              world/brunei-darussalam.txt   \
-  * Japan                          world/japan.txt               \
-  * Congo Dr                       world/congo-dr.txt            \
-  * Singapore                      world/singapore.txt           \
-  * Mali                           world/mali.txt                \
-  * Bangladesh                     world/bangladesh.txt          \
-  * Bahamas                        world/bahamas.txt             \
-  * France Departments             world/france-departments.txt  \
-  * Bahrain                        world/bahrain.txt             \
-  * Morocco                        world/morocco.txt             \
-  * Greece                         world/greece.txt              \
-  * Belgium                        world/belgium.txt             \
-  * Portugal                       world/portugal.txt            \
-==> passed\
-\
-Test 8: check correctness for random states in USA\
-  * Idaho                          usa/usa-id.txt                \
-  * Louisiana                      usa/usa-la.txt                \
-  * Arizona                        usa/usa-az.txt                \
-  * Arkansas                       usa/usa-ar.txt                \
-  * Michigan                       usa/usa-mi.txt                \
-  * Kansas                         usa/usa-ks.txt                \
-  * Virginia                       usa/usa-va.txt                \
-  * Vermont                        usa/usa-vt.txt                \
-  * Massachusetts                  usa/usa-ma.txt                \
-  * New York                       usa/usa-ny.txt                \
-  * Maryland                       usa/usa-md.txt                \
-  * Illinois                       usa/usa-il.txt                \
-  * Maine                          usa/usa-me.txt                \
-  * Tennessee                      usa/usa-tn.txt                \
-  * Wisconsin                      usa/usa-wi.txt                \
-==> passed\
-\
-Test 9: check correctness of large input files\
-  * USA (all counties)             usa-all-counties.txt          \
-  * World                          world.txt                     \
-==> passed\
+==> FAILED\
 \
 \
-WorldMap Total: 9/9 tests passed!\
+AudioCollage Total: 19/20 tests passed!\
 \
 \
 ================================================================\
+********************************************************************************\
+*  TIMING\
+********************************************************************************\
 }

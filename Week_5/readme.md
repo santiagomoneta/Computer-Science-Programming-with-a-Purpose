@@ -1,3 +1,3 @@
 - Week 5: Functions & libraries
 - Assigments ([link](https://coursera.cs.princeton.edu/introcs/assignments/functions/specification.php))
-- HomeWork Score: 
+- HomeWork Score: 85%
