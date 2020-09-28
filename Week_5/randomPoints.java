@@ -6,8 +6,8 @@ public class randomPoints
 		for (int i = 0; i < 0; i++)
 		{
 			double x = StdRandom.gaussian(0.5, 0.2);
-			double y = StdRandom.gaussian(0.5, 0.2);
-			StdDraw.point(x, y)
+			Double y = StdRandom.gaussian(0.5, 0.2);
+			StdDraw.point(x,y);
 		}
 	}
 }
