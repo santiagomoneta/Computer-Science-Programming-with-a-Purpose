@@ -8,6 +8,6 @@ This repo contains the files from the assigments plus other test and samples I w
 
 
 # Usage:
-compile by `javac programName.java`
+compile by `javac -cp $CLASSPATH:./stdlib.jar programName.java`
 
-Execute by `java programName argument(s)`
+Execute by `java -cp $CLASSPATH:./stdlib.jar programName argument(s)`
