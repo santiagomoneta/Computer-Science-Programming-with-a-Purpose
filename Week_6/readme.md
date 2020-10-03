@@ -1,0 +1,3 @@
+- Week 6: Recursion
+- Assigments ([link](https://coursera.cs.princeton.edu/introcs/assignments/recursion/specification.php))
+- HomeWork Score: 93%
