@@ -1,0 +1,3 @@
+- Week 8: Data Types
+- Assigments ([link](https://coursera.cs.princeton.edu/introcs/assignments/oop1/specification.php)
+- HomeWork Score: 82%
