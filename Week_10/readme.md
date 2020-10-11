@@ -1,0 +1,3 @@
+- Week 10: Programming languages
+- Assigments ([link](https://coursera.cs.princeton.edu/introcs/assignments/barchart/specification.php)
+- HomeWork Score: 100%

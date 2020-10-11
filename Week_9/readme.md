@@ -1,0 +1,3 @@
+- Week 9: Creating Data Types
+- Assigments ([link](https://coursera.cs.princeton.edu/introcs/assignments/oop2/specification.php)
+- HomeWork Score: 88%
